@@ -26,7 +26,6 @@ await upload(db, 'db/short-tracks.csv', `
 	from stdin
 	with csv header`);
 console.log('Data imported.');
-
 await db.end();
 
 console.log('Database recreated.');
