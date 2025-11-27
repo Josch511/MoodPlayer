@@ -132,12 +132,10 @@ body {
 
 /* categories site */
 
-.categories-container {
-    width: 200px;
+.categories-box {
+    width: 400px;
     height: 100px;
-    background-color: #333;
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     padding: 20px;
