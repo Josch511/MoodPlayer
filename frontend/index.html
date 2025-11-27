@@ -22,9 +22,58 @@
             <label for="password">Adgangskode</label>
             <input type="password" id="password" placeholder="" required />
 
-            <button href="categories.html" type="submit" class="login-btn">Opret konto</button>
-        
+        <label>Indtast din fødselsdag</label>
+<div class="birthday-wrapper">
+    <select id="day">
+        <option value="" disabled selected>Dag</option>
+
+        <script>
+            for (let d = 1; d <= 31; d++) {
+                document.write(`<option value="${d}">${d}</option>`);
+            }
+        </script>
+    </select>
+
+    <select id="month">
+        <option value="" disabled selected>Måned</option>
+        <option>Januar</option>
+        <option>Februar</option>
+        <option>Marts</option>
+        <option>April</option>
+        <option>Maj</option>
+        <option>Juni</option>
+        <option>Juli</option>
+        <option>August</option>
+        <option>September</option>
+        <option>Oktober</option>
+        <option>November</option>
+        <option>December</option>
+    </select>
+
+    <select id="year">
+        <option value="" disabled selected>År</option>
+        <script>
+            const currentYear = new Date().getFullYear();
+            for (let y = currentYear; y >= 1900; y--) {
+                document.write(`<option value="${y}">${y}</option>`);
+            }
+        </script>
+    </select>
+
+    </div>
+
+    <div class="terms-wrapper">
+    <input type="checkbox" id="terms" required />
+    <label for="terms">
+        <span class="required">*</span>
+        Ved at fortsætte accepterer du vores vilkår og betingelser
+    </label>
+
+</div>
+
+            <button type="submit" class="login-btn">Opret konto</button>
         </form>
+
     </div>
 </body>
     <script src="index.js" type="module"></script>
