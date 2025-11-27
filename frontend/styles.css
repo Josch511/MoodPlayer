@@ -129,3 +129,16 @@ body {
     font-weight: bold;
     margin-right: 3px;
 }
+
+/* categories site */
+
+.categories-container {
+    width: 200px;
+    height: 100px;
+    background-color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
