@@ -10,23 +10,10 @@ await db.query('drop table if exists tracks');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
-await db.query(`
-    create table tracks (
-        track_id bigint primary key,
-	    title text not null,
-	    artist text not null,
-	    duration int not null
-    )
-`);
+
 console.log('Tables recreated.');
 
 console.log('Importing data from CSV files...');
-await upload(db, 'db/short-tracks.csv', `
-	copy tracks (track_id, title, artist, duration)
-	from stdin
-	with csv header`);
-console.log('Data imported.');
-await db.end();
 
 console.log('Database recreated.');
 
@@ -39,3 +26,24 @@ await upload(`
 	
 	);
 `);
+
+await db.query(`
+    drop table if exists user_interaction;
+    create table user_interaction (
+        interaction_id    integer,
+        track_id      	  integer  references track_id
+        like			  integer,
+        dislike		      integer
+);
+`);
+
+await db.query(`
+    drop table if exists current_play;
+    create table current_play (
+        track_id    integer	 references track_id
+        is_playing  boolean  
+    );
+`);
+
+
+await db.end();
