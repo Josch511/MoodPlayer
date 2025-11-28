@@ -40,15 +40,15 @@ await db.query(`
 await db.query(`
     drop table if exists current_play;
     create table current_play (
-        track_id    integer	 references track_id,
-        is_playing  boolean  
+        track_id               integer references track_id,
+        is_playing             boolean  
     );
 `);
 
 await db.query(`
     drop table if exists tracks;
     create table tracks (
-        track_id        integer primary key,
+        track_id         integer primary key,
         title            text,
         artist           text,
         genre            text,
