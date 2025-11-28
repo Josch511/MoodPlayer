@@ -31,7 +31,7 @@ await db.query(`
     drop table if exists user_interaction;
     create table user_interaction (
         interaction_id    integer,
-        tracks_id      	  integer  references tracks_id,
+        track_id      	  integer  references track_id,
         like			  integer,
         dislike		      integer
 );
@@ -40,7 +40,7 @@ await db.query(`
 await db.query(`
     drop table if exists current_play;
     create table current_play (
-        tracks_id    integer	 references tracks_id,
+        track_id    integer	 references track_id,
         is_playing  boolean  
     );
 `);
@@ -48,7 +48,7 @@ await db.query(`
 await db.query(`
     drop table if exists tracks;
     create table tracks (
-        tracks_id        integer primary key,
+        track_id        integer primary key,
         title            text,
         artist           text,
         genre            text,
