@@ -1,8 +1,7 @@
-/* CSS log-in site */
-
-body {
-    margin: 0;
-    padding: 0;
+/* CSS til log-in siden */
+body{
+    margin: 12;
+    padding: 10;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #f5edff, #ffffff);
     height: 100vh;
@@ -132,13 +131,161 @@ body {
     margin-right: 3px;
 }
 
-/* categories site */
-
-.categories-box {
-    width: 400px;
-    height: 100px;
+body#getToKnow {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(to bottom, #faf3ff, #ffffff);
     display: flex;
-    gap: 20px;
     justify-content: center;
+    padding: 40px 0;
+}
+
+/* Wrapper */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Ikon cirkel */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #a445f7;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin: 0 auto 20px auto;
+}
+
+/* Overskrift */
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.subtitle {
+    margin-top: 8px;
+    color: #666;
+}
+
+/* Progress bar */
+.progress-wrapper {
+    width: 80%;
+    height: 6px;
+    background: #e5e5e5;
+    border-radius: 10px;
+    margin: 25px auto 5px auto;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #d14eff;
+    border-radius: 10px;
+}
+
+/* Tekst under progress-bar */
+.question-count {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Kort */
+.card {
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.question-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Svar knapper */
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.answer {
+    background: #fafafa;
+    border: 2px solid #e8e8e8;
+    border-radius: 14px;
     padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answer:hover {
+    border-color: #c96bff;
+    background: #f8eaff;
+}
+
+.emoji {
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+.bottom-nav {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Basisknap styling */
+.nav-btn {
+    flex: 1;
+    padding: 16px 0;
+    font-size: 17px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* Tilbage-knap (lys, neutral) */
+.nav-btn.back {
+    background: #f5f5f5;
+    color: #444;
+    border: 1.5px solid #e2e2e2;
+}
+
+.nav-btn.back:hover {
+    background: #ededed;
+    border-color: #d4d4d4;
+    transform: translateY(-2px);
+}
+
+/* Videre-knap (primær, lilla) */
+.nav-btn.next {
+    background: #a445f7;
+    color: white;
+    border: 1.5px solid #8f2ef1;
+}
+
+.nav-btn.next:hover {
+    background: #922df1;
+    border-color: #7b0be2;
+    transform: translateY(-2px);
 }
