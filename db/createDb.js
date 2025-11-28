@@ -29,3 +29,24 @@ console.log('Data imported.');
 await db.end();
 
 console.log('Database recreated.');
+
+await db.query(`
+    drop table if exists user_interaction;
+    create table user_interaction (
+        interaction_id    integer,
+        track_id      	  integer  references track_id
+        like			  integer,
+        dislike		      integer
+);
+`);
+
+await db.query(`
+    drop table if exists current_play;
+    create table current_play (
+        track_id    integer	 references track_id
+        is_playing  boolean  
+    );
+`);
+
+
+await db.end();
