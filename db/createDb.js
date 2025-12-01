@@ -9,7 +9,7 @@ console.log('Dropping tables...');
 await db.query('drop table if exists user_interaction');
 await db.query('drop table if exists current_play');
 await db.query('drop table if exists tracks');
-await db.query('drop table if exists mood');
+await db.query('drop table if exists playlists');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
@@ -31,7 +31,7 @@ await db.query(`
 await db.query(`
     create table playlists (
         playlist_id        integer primary key,
-        playlist_name      text,    
+        playlist_name      text    
     );
 `);
 
