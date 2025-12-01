@@ -27,4 +27,31 @@ await db.query(`
         release_year     integer       
     );
 `);
+
+await db.query(`
+    create table mood (
+        mood_id        integer primary key,
+        mood_name      text,
+        description    text    
+    );
+`);
+
+await db.query(`
+    create table user_interaction (
+        interaction_id    integer primary key,
+        track_id          integer references tracks(track_id),
+        like_count        integer,
+        dislike_count     integer
+    );
+`);
+
+await db.query(`
+    create table current_play (
+        track_id       integer references tracks(track_id),
+        is_playing     boolean  
+    );
+`);
+
+console.log('Tables recreated.');
+
 await db.end();
