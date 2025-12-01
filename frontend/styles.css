@@ -289,3 +289,102 @@ h1 {
     border-color: #7b0be2;
     transform: translateY(-2px);
 }
+
+/* categories. html */
+/* ============================
+   MUSIK / KATEGORI SIDE (SAFE)
+   ============================ */
+
+/* Grundlayout */
+.music-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+}
+
+/* ===== Sidebar ===== */
+.music-sidebar {
+    width: 220px;
+    background: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-album {
+    width: 120px;
+    height: 120px;
+    background: #ddd;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.music-title {
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.music-artist {
+    margin: 0 0 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.music-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.music-controls button {
+    padding: 8px;
+    font-size: 18px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* ===== Main content ===== */
+.music-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.music-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* ===== Kategori grid ===== */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    gap: 25px;
+}
+
+/* ===== Kategori kort ===== */
+.music-card {
+    width: 150px;
+    height: 120px;
+    background: #b283d8;
+    border: 3px solid #6d3f9b;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.music-card:hover {
+    background: #c89ef3;
+}
