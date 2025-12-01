@@ -6,47 +6,16 @@ console.log('Recreating database...');
 const db = await connect();
 
 console.log('Dropping tables...');
+await db.query('drop table if exists user_interaction');
+await db.query('drop table if exists current_play');
 await db.query('drop table if exists tracks');
+await db.query('drop table if exists mood');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
 
-console.log('Tables recreated.');
-
-console.log('Importing data from CSV files...');
-
-console.log('Database recreated.');
-
+// Erst tracks erstellen (wird von anderen referenziert)
 await db.query(`
-	drop table if exists mood;
-	create table mood (
-        mood_id        integer,
-	    mood_name      text,
-	    description    text    
-	
-);
-`);
-
-await db.query(`
-    drop table if exists user_interaction;
-    create table user_interaction (
-        interaction_id    integer,
-        track_id      	  integer  references track_id,
-        like			  integer,
-        dislike		      integer
-);
-`);
-
-await db.query(`
-    drop table if exists current_play;
-    create table current_play (
-        track_id               integer references track_id,
-        is_playing             boolean  
-    );
-`);
-
-await db.query(`
-    drop table if exists tracks;
     create table tracks (
         track_id         integer primary key,
         title            text,
@@ -56,6 +25,33 @@ await db.query(`
         duration         integer,
         album_cover      text,
         release_year     integer       
-);
+    );
 `);
+
+await db.query(`
+    create table mood (
+        mood_id        integer primary key,
+        mood_name      text,
+        description    text    
+    );
+`);
+
+await db.query(`
+    create table user_interaction (
+        interaction_id    integer primary key,
+        track_id          integer references tracks(track_id),
+        like_count        integer,
+        dislike_count     integer
+    );
+`);
+
+await db.query(`
+    create table current_play (
+        track_id       integer references tracks(track_id),
+        is_playing     boolean  
+    );
+`);
+
+console.log('Tables recreated.');
+
 await db.end();
