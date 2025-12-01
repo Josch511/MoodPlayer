@@ -31,8 +31,7 @@ await db.query(`
 await db.query(`
     create table mood (
         mood_id        integer primary key,
-        mood_name      text,
-        description    text    
+        mood_name      text,    
     );
 `);
 
