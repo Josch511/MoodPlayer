@@ -43,8 +43,9 @@ function onServerReady() {
 
 async function loadTracks() {
     const dbResult = await db.query(`
-        select track_id, title, artist, duration
+        select *
         from   tracks
+        where track_id = '5SuOikwiRyPMVoIQDJUgSV'
     `);
     return dbResult.rows;
 }
