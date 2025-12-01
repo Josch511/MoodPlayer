@@ -138,6 +138,7 @@ body#getToKnow {
     display: flex;
     justify-content: center;
     padding: 40px 0;
+    align-items: center;
 }
 
 /* Wrapper */
