@@ -29,9 +29,9 @@ await db.query(`
 `);
 
 await db.query(`
-    create table mood (
-        mood_id        integer primary key,
-        mood_name      text,    
+    create table playlists (
+        playlist_id        integer primary key,
+        playlist_name      text,    
     );
 `);
 
