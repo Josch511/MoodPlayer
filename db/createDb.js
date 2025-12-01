@@ -53,4 +53,9 @@ await db.query(`
 
 console.log('Tables recreated.');
 
+await upload(db, 'db/tracks.csv',
+  'copy tracks (track_id, artists, track_name, popularity, duration_ms, explicit, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, time_signature, track_genre) from stdin with csv header');
+
+await upload(db, 'db/userinteraction.csv',
+    'copy userinteraction (interaction_id, track_id, like, dislike) from stdin with csv header');
 await db.end();
