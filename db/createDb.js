@@ -14,7 +14,6 @@ console.log('All tables dropped.');
 
 console.log('Recreating tables...');
 
-// Erst tracks erstellen (wird von anderen referenziert)
 await db.query(`
     create table tracks (
         track_id         integer primary key,
