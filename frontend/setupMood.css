@@ -1,0 +1,80 @@
+body{
+    margin: 12;
+    padding: 10;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f5edff, #ffffff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    width: 40%;       /* Fylder 80% af skærmen */
+    max-width: 1200px; /* Men ikke mere end 1200px på store skærme */
+    margin: 0 auto;   /* Centrerer container horisontalt */
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #a020f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+
+.note {
+    color: white;
+    font-size: 36px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.subtitle {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: #555;
+}
+
+.progress-wrapper {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    margin: 16px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #4caf50;
+    border-radius: 4px;
+    transition: width .3s ease;
+}
+
+.answer-btn {
+    display: block;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.answer-btn.active {
+    background: #4caf50;
+    color: white;
+}
+
+
+
+
