@@ -9,56 +9,43 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <img src="album.jpg" class="album-cover" alt="Album cover">
-=======
-    <div class="category-page">
+<div class="category-page">
 
-    <!-- Top ikon + titel -->
-    <header class="category-header">
-        <div class="category-logo">♫</div>
-        <h1 class="category-title">Vælg en kategori</h1>
-    </header>
->>>>>>> 2df5538 (final changes on the site done maybe changed later)
+  <header class="category-header">
+    <div class="category-logo">♫</div>
+    <h1 class="category-title">Vælg en kategori</h1>
+  </header>
 
-    <!-- Kategori felter -->
-    <main class="category-main">
-        <div class="category-grid">
-            <button class="category-card">Sad</button>
-            <button class="category-card">Happy</button>
-            <button class="category-card">Chill</button>
-            <button class="category-card">Party</button>
-            <button class="category-card">Workout</button>
-            <button class="category-card playlist">Mood playlist</button>
-        </div>
-    </main>
+  <main class="category-main">
+    <div class="category-grid">
+      <button class="category-card" data-category="Sad">Sad</button>
+      <button class="category-card" data-category="Happy">Happy</button>
+      <button class="category-card" data-category="Chill">Chill</button>
+      <button class="category-card" data-category="Party">Party</button>
+      <button class="category-card" data-category="Workout">Workout</button>
+      <button class="category-card" data-category="Mood playlist">Mood playlist</button>
+    </div>
+  </main>
 
-<<<<<<< HEAD
-        <div class="music-controls">
-=======
-    <!-- Footer musikafspiller -->
-    <footer class="category-footer">
+  <footer class="category-footer">
+    <div class="footer-left">
+      <div class="footer-album"></div>
+      <div class="footer-text">
+        <p class="footer-title">Titel</p>
+        <p class="footer-artist">Kunstner</p>
+      </div>
+    </div>
 
-        <div class="footer-left">
-            <div class="footer-album"></div>
-            <div class="footer-text">
-                <p class="footer-title">Titel</p>
-                <p class="footer-artist">Kunstner</p>
-            </div>
-        </div>
+    <div class="footer-controls">
+      <button id="btn-dislike">👎</button>
+      <button id="btn-prev">⏮</button>
+      <button id="btn-play">▶</button>
+      <button id="btn-next">⏭</button>
+       <button id="btn-like">👍</button>
+    </div>
 
-        <div class="footer-controls">
->>>>>>> 2df5538 (final changes on the site done maybe changed later)
-            <button>👎🏼</button>
-            <button>⏮</button>
-            <button>▶</button>
-            <button>⏭</button>
-            <button>🫶🏼</button>
-        </div>
+    <div class="footer-empty"></div>
+  </footer>
 
-        <div class="footer-empty"></div>
-
-    </footer>
 </div>
+<script src="categories.js"></script>

@@ -428,6 +428,14 @@ h1 {
     width: 70px;
 }
 
+/* Selected mood */
+.category-card.category-card--selected {
+    box-shadow: 0 0 0 4px #000000;
+    transform: translateY(-4px);
+}
+
+/* CATEGORIES CSS ENDS HERE*/ 
+
 /* Definer farver */
 :root {
     --purple-main: #8A2BE2; /* Primær lilla (til knapper/ikoner) */
