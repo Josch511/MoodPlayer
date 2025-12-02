@@ -14,9 +14,12 @@ body{
     text-align: center;
     width: 350px;
 }
+
 .logoIndex img {
     width: 150px;
-    height: auto;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    display: block;
 }
 
 .logo-circle {

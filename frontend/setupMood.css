@@ -152,7 +152,12 @@ body{
     color: #eee;
 }
 
-
+.logoIndex img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    display: block;
+}
 
 
 

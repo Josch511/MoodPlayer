@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>MoodPlayer</title>
-        <link rel="icon" type="image/x-icon" href="img/logoTilMoodPlayer.png">
-        <link rel="stylesheet" href="getToKnow.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    </head>
-    <body>
-        
-
+    <title>Lad os lære dig at kende</title>
+    <link rel="icon" type="image/x-icon" href="img/iconLogo.png">
+    <link rel="stylesheet" href="getToKnow.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+</head>
+<body>
     <div class="container">
-        <div class="logo-circle">
-            <span class="note">♪</span>
+        <div class="logoIndex">
+            <img src="img/logoTilMoodPlayer.png"/>
         </div>
 
         <h1>Lad os lære dig at kende</h1>
@@ -25,17 +23,15 @@
 
         <div id="question-container">
             <h2 id="question-title"></h2>
+            <div id="answers"></div>
+        </div>
 
-        <div id="answers"></div>
-            
-</div>
+        <div class="buttons">
+            <button id="back-btn">Tilbage</button>
+            <button class="next-btn" id="next-btn" disabled>Fortsæt</button>
+        </div>
+    </div>
 
-<div class="buttons">
-    <button id="back-btn">Tilbage</button>
-    <button class="next-btn" id="next-btn" disabled>Fortsæt</button>
-</div>
-
-<script src="getToKnow.js"></script>
-
+    <script src="getToKnow.js"></script>
 </body>
 </html>
