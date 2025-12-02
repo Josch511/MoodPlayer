@@ -36,3 +36,20 @@ function renderCurrentTrack(partyId, track) {
     contentDiv.textContent = `Party ${partyId} is now listening to ${track.title} by ${track.artist}`
 }
 
+// får opret bruger knappen til at gå videre til getToKnow.html
+
+document.getElementById("opretkontoknap").addEventListener("click", () => {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // tjekker om email og password er udfyldt 
+    if (email == "" || password == "") {
+        // ellers alert med denne besked:
+        alert("Udfyld venligst email og adgangskode, prøv igen");
+        return;
+    }
+
+    // hvis begge felter er udfyldt svarer den med getToKnow.html 
+    window.location.href = "getToKnow.html"
+
+});
