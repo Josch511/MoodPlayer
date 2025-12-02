@@ -38,7 +38,10 @@ function renderCurrentTrack(partyId, track) {
 
 // får opret bruger knappen til at gå videre til getToKnow.html
 
+// når man trykker på opret konto knappen 
 document.getElementById("opretkontoknap").addEventListener("click", () => {
+
+    // opretter email og password og tager dem inde fra html 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
