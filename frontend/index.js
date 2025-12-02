@@ -35,7 +35,7 @@ function renderCurrentTrack(partyId, track) {
     const contentDiv = document.getElementById('content');
     contentDiv.textContent = `Party ${partyId} is now listening to ${track.title} by ${track.artist}`
 }
-
+/*      VERSION 1 
 // får opret bruger knappen til at gå videre til getToKnow.html
 
 // når man trykker på opret konto knappen 
@@ -56,3 +56,4 @@ document.getElementById("opretkontoknap").addEventListener("click", () => {
     window.location.href = "getToKnow.html"
 
 });
+*/
