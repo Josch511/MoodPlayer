@@ -126,7 +126,7 @@ function renderQuestion() {
 function updateProgress() {
     const progress = (currentQuestionIndex / questions.length) * 100;
     progressBar.style.width = `${progress}%`;
-    progressText.textContent = `Spørgsmål ${currentQuestionIndex + 1} af ${questions.length}`;
+    progressText.textContent = `Spørgsmål ${currentQuestionIndex + 1} af 6`;
 }
 
 // den viser tilbage knappen på spørgsmål 2-5 men ikke ved det første 
