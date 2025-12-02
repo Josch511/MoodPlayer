@@ -3,10 +3,10 @@ const questions = [
     {
         title: "Hvilken genre foretrækker du?",
         answers: [
-            { emoji: "🎵", text: "Pop" },
-            { emoji: "🎤", text: "Rap" },
-            { emoji: "🎸", text: "Rock" },
-            { emoji: "🎷", text: "Jazz" }
+            { emoji: "🎵", text: "Pop 🎵" },
+            { emoji: "🎤", text: "Rap 🎤" },
+            { emoji: "🎸", text: "Rock 🎸" },
+            { emoji: "🎷", text: "Jazz 🎷" }
         ]
     },
     {
@@ -21,10 +21,10 @@ const questions = [
     {
         title: "Hvornår lytter du mest til musik?",
         answers: [
-            { emoji: "🏠", text: "Derhjemme" },
-            { emoji: "🏋🏽‍♀️", text: "Træning" },
-            { emoji: "🚙", text: "Kørsel" },
-            { emoji: "🎊", text: "Fest" }
+            { emoji: "🏠", text: "Derhjemme 🏠" },
+            { emoji: "🏋🏽‍♀️", text: "Træning 🏋🏽‍♀️" },
+            { emoji: "🚙", text: "Kørsel 🚙" },
+            { emoji: "🎊", text: "Fest 🎊" }
         ]
     },
     {
