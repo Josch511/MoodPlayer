@@ -11,9 +11,8 @@ body{
 
 .container {
     text-align: center;
-    width: 40%;       /* Fylder 80% af skærmen */
-    max-width: 1200px; /* Men ikke mere end 1200px på store skærme */
-    margin: 0 auto;   /* Centrerer container horisontalt */
+    width: 40%;      
+    margin: 0 auto;   
 }
 
 .logo-circle {
