@@ -78,3 +78,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// ændringer kommer senere når vi har dataase osv
