@@ -1,0 +1,219 @@
+/* Definer farver */
+:root {
+    --purple-main: #8A2BE2; /* Primær lilla (til knapper/ikoner) */
+    --light-purple: #f8f0ff; /* Meget lys lilla til blød baggrund */
+    --text-dark: #333; /* Mørk tekst for læsbarhed */
+    --light-line: #ddd; /* Meget let linje til opdeling */
+}
+
+/* Får siden til at fylde hele skærmen med en blød lilla baggrund */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: linear-gradient(135deg, var(--light-purple) 0%, #ffffff 100%); 
+    margin: 0;
+    padding: 0;
+    width: 100vw; 
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Container, der dækker hele skærmen */
+.container-happy {
+    width: 100vw; 
+    height: 100vh; 
+    background-color: transparent; 
+    padding: 20px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-top: none; 
+    box-sizing: border-box; 
+    color: var(--text-dark);
+}
+
+/* --- LOGO I TOPPEN --- */
+.logo-happy {
+    text-align: center;
+    padding: 20px 0 10px 0; 
+}
+
+.music-icon-happy {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; 
+    height: 60px;
+    background-color: var(--purple-main);
+    border-radius: 50%;
+    font-size: 30px; 
+    color: white; 
+    font-weight: bold;
+    padding-right: 5px; 
+}
+
+/* Header-området */
+.header-happy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-weight: 600;
+    border-bottom: 1px solid var(--light-line); 
+}
+
+.header-happy h1 {
+    font-size: 28px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.arrow-happy,
+.icons-happy .icon-happy {
+    font-size: 24px;
+    color: var(--purple-main);
+}
+.icons-happy .icon-happy {
+    font-size: 24px;
+}
+
+/* Playlist-tabel */
+.playlist-area-happy {
+    flex-grow: 1; 
+    overflow-y: auto;
+    padding-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 12px 10px; 
+    border-bottom: 1px solid var(--light-line); 
+}
+
+thead th {
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--light-line);
+}
+
+tbody tr:hover {
+    background-color: var(--light-purple);
+    cursor: pointer;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 5%; text-align: right; }
+th:nth-child(2), td:nth-child(2) { width: 50%; }
+th:nth-child(3), td:nth-child(3) { width: 25%; }
+th:nth-child(4), td:nth-child(4) { width: 10%; text-align: right; }
+
+
+/* --- PLAYER-KONTROLOMRÅDET (Kompakt) --- */
+.player-controls-happy {
+    padding: 10px 20px; 
+    border-top: 1px solid var(--light-line); 
+    flex-shrink: 0; 
+    background-color: white; 
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: relative; 
+}
+
+/* Album-info sektionen: Skjult for kompakt bar */
+.album-info-happy {
+    display: none; 
+}
+
+/* Afspilningslinjen (progress bar): Øverst */
+.playback-bar-happy {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+}
+
+.progress-bar-happy {
+    flex-grow: 1;
+    height: 3px; 
+    background-color: var(--light-line);
+    margin: 0 8px; 
+    position: relative;
+    border-radius: 1.5px;
+}
+
+.progress-bar-happy::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: var(--purple-main);
+    border-radius: 1.5px;
+}
+
+.current-time-happy, .total-time-happy {
+    font-size: 11px; 
+    color: var(--text-dark);
+}
+
+/* Medieknapper: Centreret */
+.media-buttons-happy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; 
+}
+
+/* --- NU ER ALLE KNAPPER FYLDT LILLA, SOM PÅ DIT BILLEDE --- */
+
+/* Knapper (<<, >>, Shuffle) */
+.button-happy {
+    font-size: 18px; 
+    font-weight: bold;
+    margin: 0 5px; 
+    cursor: pointer;
+    
+    /* FYLDT LILLA KNAP */
+    background-color: var(--purple-main); 
+    color: white; /* Hvidt ikon/tekst */
+    padding: 6px 10px; 
+    border-radius: 8px; /* Afrundede hjørner */
+    
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+/* Play/Pause knappen: FYLDT LILLA KNAP */
+.play-happy {
+    font-size: 20px; 
+    /* Fjern outline/kant, GØR BAGGRUNDEN LILLA */
+    border: none; 
+    background-color: var(--purple-main);
+    color: white; /* Hvid ikon */
+    
+    border-radius: 8px; /* Afrundede hjørner */
+    padding: 6px 12px 6px 14px; 
+    margin: 0 15px; 
+}
+
+/* Hjertet: Sikrer hvid farve på ikon */
+.heart-happy {
+    color: white; 
+}
+
+/* Hover effekt for de fyldte knapper */
+.button-happy:hover, .play-happy:hover {
+    opacity: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
