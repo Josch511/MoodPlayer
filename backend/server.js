@@ -17,8 +17,7 @@ server.use(express.json());
 server.use(onEachRequest);
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
 server.get(/\/[a-zA-Z0-9-_/]+/, onFallback); // serve index.html on any other simple path
-server.get("/search", onMusicData);
-server.get("/api/tracks", onGetTracks); // Existing endpoint for all tracks
+server.get("/api/happyPlaylist", onGetHappy); // Existing endpoint for all tracks
 server.listen(port, onServerReady);
 
 async function onGetCurrentTrackAtParty(request, response) {
@@ -61,11 +60,11 @@ function pickNextTrackFor(partyCode) {
     return trackIndex;
 }
 // 
-async function onGetTracks(request, response) {
+async function onGetHappy(request, response) {
     const dbResult = await db.query(`
         select *
-        from   tracks
-        limit 10
+        from   happyPlaylist
+        limit 25
     `);
     response.json(dbResult.rows);
 }

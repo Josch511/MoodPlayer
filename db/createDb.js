@@ -43,13 +43,6 @@ await db.query(`
 `);
 
 await db.query(`
-    CREATE TABLE playlists (
-        playlist_id   SERIAL,
-        playlist_name TEXT
-    )
-`);
-
-await db.query(`
     CREATE TABLE partyPlaylist (
         id          SERIAL,
         artist      TEXT,
@@ -95,12 +88,6 @@ await upload(db, 'db/tracks.csv', `
         danceability, energy, key, loudness, mode,
         speechiness, acousticness, instrumentalness, liveness,
         valence, tempo, time_signature, track_genre
-    ) FROM STDIN WITH CSV HEADER
-`);
-
-await upload(db, 'db/playlists.csv', `
-    COPY playlists (
-        playlist_id, playlist_name
     ) FROM STDIN WITH CSV HEADER
 `);
 
