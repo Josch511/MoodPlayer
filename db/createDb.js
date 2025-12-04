@@ -8,6 +8,10 @@ const db = await connect();
 console.log('Dropping tables...');
 await db.query('DROP TABLE IF EXISTS playlists');
 await db.query('DROP TABLE IF EXISTS tracks');
+await db.query('DROP TABLE IF EXISTS partyPlaylist');
+await db.query('DROP TABLE IF EXISTS happyPlaylist');
+await db.query('DROP TABLE IF EXISTS sadPlaylist');
+await db.query('DROP TABLE IF EXISTS moodPlaylist');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
