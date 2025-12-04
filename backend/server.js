@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { connect } from '../db/connect.js';
 import { play } from './player.js';
+import { on } from 'events';
 
 
 const db = await connect();
@@ -16,6 +17,7 @@ server.use(express.json());
 server.use(onEachRequest);
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
 server.get(/\/[a-zA-Z0-9-_/]+/, onFallback); // serve index.html on any other simple path
+server.get("/api/tracks", onGetTracks); // Existing endpoint for all tracks
 server.listen(port, onServerReady);
 
 async function onGetCurrentTrackAtParty(request, response) {
@@ -56,4 +58,13 @@ function pickNextTrackFor(partyCode) {
     const track = tracks[trackIndex];
     play(partyCode, track.track_id, track.duration, Date.now(), () => currentTracks.delete(partyCode));
     return trackIndex;
+}
+// 
+async function onGetTracks(request, response) {
+    const dbResult = await db.query(`
+        select *
+        from   tracks
+        limit 10
+    `);
+    response.json(dbResult.rows);
 }
