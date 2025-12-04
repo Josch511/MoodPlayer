@@ -70,21 +70,3 @@ async function onGetTracks(request, response) {
     response.json(dbResult.rows);
 }
 
-// skal rettes til !
-
-function onMusicData(request, response) {
-    const query = document.getElementById('click').value.toLowerCase();
-    const matches = [];
-
-    for (const album of albums) {
-        for (const track of album.tracks) {
-            if (track.title.toLowerCase().startsWith(query)) {
-                matches.push({
-                    title: track.title,
-                    albumTitle: album.title,
-                    artist: album.artist.name
-                });
-            }
-        }
-    }
-}
