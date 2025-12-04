@@ -45,6 +45,44 @@ await db.query(`
     )
 `);
 
+await db.query(`
+    CREATE TABLE partyPlaylist (
+        id          SERIAL,
+        artist      TEXT,
+        album       TEXT,
+        title       TEXT,
+        duration    INTEGER
+    )
+`);
+
+await db.query(`
+    CREATE TABLE happyPlaylist (
+        id          SERIAL,
+        artist      TEXT,
+        album       TEXT,
+        title       TEXT,
+        duration    INTEGER
+    )
+`);
+
+await db.query(`
+    CREATE TABLE sadPlaylist (
+        id          SERIAL,
+        artist      TEXT,
+        album       TEXT,
+        title       TEXT,
+        duration    INTEGER
+    )
+`);
+
+await db.query(`
+    Create TABLE moodPlaylist (
+        id          SERIAL,
+        artist      TEXT
+    )
+`);    
+
+
 console.log('Tables recreated.');
 
 await upload(db, 'db/tracks.csv', `
@@ -59,6 +97,24 @@ await upload(db, 'db/tracks.csv', `
 await upload(db, 'db/playlists.csv', `
     COPY playlists (
         playlist_id, playlist_name
+    ) FROM STDIN WITH CSV HEADER
+`);
+
+await upload(db, 'db/partyPlaylist.csv', `
+    COPY partyPlaylist (
+        id, artist, album, title, duration
+    ) FROM STDIN WITH CSV HEADER
+`);
+
+await upload(db, 'db/happyPlaylist.csv', `
+    COPY happyPlaylist (
+        id, artist, album, title, duration
+    ) FROM STDIN WITH CSV HEADER
+`);
+
+await upload(db, 'db/moodPlaylist.csv', `
+    COPY moodPlaylist (
+        id, artist
     ) FROM STDIN WITH CSV HEADER
 `);
 
