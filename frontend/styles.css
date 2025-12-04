@@ -481,8 +481,9 @@ body {
 
 .arrow-happy,
 .icons-happy .icon-happy {
-    font-size: 24px;
+    font-size: 20px;
     color: var(--purple-main);
+    cursor: pointer;
 }
 .icons-happy .icon-happy {
     font-size: 24px;
