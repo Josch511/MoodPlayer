@@ -513,6 +513,12 @@ thead th {
     color: var(--text-dark);
     text-transform: uppercase;
     border-bottom: 2px solid var(--light-line);
+    font-size: 0.9rem;
+    padding: 15px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
+    text-align: left;
 }
 
 tbody tr:hover {
@@ -520,10 +526,40 @@ tbody tr:hover {
     cursor: pointer;
 }
 
-th:nth-child(1), td:nth-child(1) { width: 5%; text-align: right; }
-th:nth-child(2), td:nth-child(2) { width: 50%; }
-th:nth-child(3), td:nth-child(3) { width: 25%; }
-th:nth-child(4), td:nth-child(4) { width: 10%; text-align: right; }
+/* Sørger for, at tabellen bruger de definerede bredder */
+.playlist-area-happy table {
+    table-layout: fixed; /* VIGTIGT: Hvis den mangler i din kode, indsæt den */
+}
+
+/* Kolonne 1: # (nummer) */
+th:nth-child(1), td:nth-child(1) { 
+    width: 5%; 
+    text-align: center; /* Centrer nummeret */
+}
+
+/* Kolonne 2: Title (Helt til venstre) */
+th:nth-child(2) { 
+    width: 45%; /* Lidt mindre, så album får plads */
+    text-align: left; /* Header tekst til venstre */
+}
+td:nth-child(2) {
+    text-align: left; /* Data-tekst til venstre */
+}
+
+/* Kolonne 3: Album (Centreret) */
+th:nth-child(3), td:nth-child(3) { 
+    width: 200%; 
+    text-align: center; /* Centrerer både header og data */
+}
+
+/* Kolonne 4: Time (Helt til højre) */
+th:nth-child(4) { 
+    width: 15%; /* Lidt mere plads */
+    text-align: right; /* Header tekst til højre */
+}
+td:nth-child(4) {
+    text-align: right; /* Data-tekst til højre */
+}
 
 
 /* --- PLAYER-KONTROLOMRÅDET (Kompakt) --- */
@@ -587,35 +623,36 @@ th:nth-child(4), td:nth-child(4) { width: 10%; text-align: right; }
 }
 
 /* --- NU ER ALLE KNAPPER FYLDT LILLA, SOM PÅ DIT BILLEDE --- */
-
-/* Knapper (<<, >>, Shuffle) */
+/* Knapper (<<, >>, Shuffle, Hjerte) */
 .button-happy {
     font-size: 18px; 
     font-weight: bold;
     margin: 0 5px; 
     cursor: pointer;
     
-    /* FYLDT LILLA KNAP */
     background-color: var(--purple-main); 
-    color: white; /* Hvidt ikon/tekst */
-    padding: 6px 10px; 
-    border-radius: 8px; /* Afrundede hjørner */
+    color: white; 
+    
+    /* GØR KNAPPEN RUND */
+    padding: 8px 10px; /* Juster for at gøre den rund */
+    border-radius: 50%; /* Gør den cirkulær */
     
     opacity: 0.9;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, box-shadow 0.2s;
 }
 
-/* Play/Pause knappen: FYLDT LILLA KNAP */
+/* Play/Pause knappen */
 .play-happy {
-    font-size: 20px; 
-    /* Fjern outline/kant, GØR BAGGRUNDEN LILLA */
+    font-size: 24px; /* Gør den større */
     border: none; 
     background-color: var(--purple-main);
-    color: white; /* Hvid ikon */
+    color: white; 
     
-    border-radius: 8px; /* Afrundede hjørner */
-    padding: 6px 12px 6px 14px; 
+    /* GØR KNAPPEN RUND OG STØRRE */
+    border-radius: 50%; 
+    padding: 10px 14px 10px 16px; /* Juster for at centrere trekanten */
     margin: 0 15px; 
+    box-shadow: 0 5px 10px rgba(138, 43, 226, 0.4); /* Tilføj skygge */
 }
 
 /* Hjertet: Sikrer hvid farve på ikon */
