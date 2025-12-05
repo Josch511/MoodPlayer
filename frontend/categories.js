@@ -14,10 +14,12 @@ function goToParty(){
 function goToWorkoutPlaylist(){
     window.location.href = "workoutPlaylist.html"
 }
- function goToChill(){
+function goToChill(){
     window.location.href = "chillPlaylist.html"
 }
-
+function goToMood(){
+    window.location.href = "moodPlaylist.html"
+}
 document.addEventListener("DOMContentLoaded", () => {
     console.log("MoodPlayer category page loaded");
 
