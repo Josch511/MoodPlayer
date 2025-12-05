@@ -7,21 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
         // giver så den ny formaterede data i et array 
         .then(data => {
             // finder html elementet der har id happyPlaylist 
-            const container = document.getElementById("happyPlaylist");
+            const tbody = document.getElementById("happyPlaylist");
             // laver et loop over alle sange 
-            data.forEach(song => {
-                // opretter et nyt div element OBS vi bruger det ikke ENDNU 
-                const div = document.createElement("div");
-                // sætter css class på sangen - også her du skal rette dummy til den rigtige class du vil style med 
-                div.className = "dummy";
-                // DOM-manipulation (indsætter vores data i den div vi lige har lavet i HTML)
-                div.innerHTML = `
-                    <div class="song-title">${song.title}</div>
-                    <div class="song-artist">${song.artist}</div>
-                    <div class="song-duration">${song.duration}</div>
+            data.forEach((song, index) => {
+                // opretter en ny tabel OBS vi bruger det ikke ENDNU 
+                const tr = document.createElement("tr");
+                // vi puutter DOMen i HTML og fortæller hvad den skal vise 
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${song.title}</td>
+                    <td>${song.album}</td>
+                    <td>${song.duration}</td>
                 `;
-                // tilføjer vores samlede DOM til HTML dokumentet
-                container.appendChild(div);
+                // vi sender hele vores DOM til vores html element 
+                tbody.appendChild(tr);
             });
         });
 });
