@@ -741,7 +741,7 @@ td:nth-child(4) {
     border-radius: 14px;
     font-size: 22px;
     font-weight: 600;
-    color: #000000;
+    color: white;
     cursor: pointer;
     transition: .2s;
     display: flex;
@@ -766,65 +766,8 @@ td:nth-child(4) {
     padding: 0 60px;
 }
 
-/* ===== FOOTER MUSIC PLAYER ===== */
-.category-footer {
-    height: 100px;
-    width: 100%;
-    background: #ffffff;
-    border-top: 3px solid #c9b6ff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
-}
 
-/* Left section: Album + Text */
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.footer-album {
-    width: 70px;
-    height: 70px;
-    background: #e0e0e0;
-    border-radius: 6px;
-}
-
-.footer-text {
-    font-size: 14px;
-    color: #2a004d;
-}
-
-.footer-title {
-    font-weight: 700;
-}
-
-/* Center buttons */
-.footer-controls {
-    display: flex;
-    gap: 35px;
-}
-
-.footer-controls button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: black; /* BLACK as requested */
-    transition: .2s;
-}
-
-.footer-controls button:hover {
-    transform: scale(1.15);
-    color: #333;
-}
-
-/* Right empty area for balance */
-.footer-empty {
-    width: 70px;
-}
+/* categories.css done here
 
 /* Selected mood */
 .category-card.category-card--selected {
