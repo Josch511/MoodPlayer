@@ -8,24 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container-happy">
-        
         <div class="logoIndex">
             <img src="img/iconLogo.png"/>
         </div>
-        
+
         <header class="header-happy">
             <span class="back" onclick="goBack()">&larr;</span>
-            <h1>Happy Playlist</h1> 
+            <h1>Happy Playlist</h1>
             <div class="icons-happy">
-                <span class="icon-happy">&#x1F464;</span> 
+                <span class="icon-happy">&#x1F464;</span>
             </div>
         </header>
 
-        
-
-         <div class="playlist-area-happy">
+        <div class="playlist-area-happy">
             <table>
                 <thead>
                     <tr>
@@ -35,43 +31,42 @@
                         <th>time</th>
                     </tr>
                 </thead>
-
-                <!-- det er denne tbody der er lavet js funktion på i forhold til csv :) -->
-
                 <tbody id="happyPlaylist">
                     <!-- CSV sangene bliver indsat her -->
                 </tbody>
             </table>
         </div>
 
-    <div class="player-controls-happy">
-        
-        <div class="album-info-happy">
-            <h3>Album cover</h3>
-            <p>...</p>
-            <p>...</p>
-        </div>
-        
-        <div class="playback-bar-happy">
-            <span class="current-time-happy">0:00</span>
-            <div class="progress-bar-happy"></div>
-            <span class="total-time-happy">0:00</span>
-        </div>
-        
+        <div class="player-controls-happy">
+            <div class="album-info-happy">
+                <h3>Album cover</h3>
+                <p>...</p>
+                <p>...</p>
+            </div>
 
+            <div class="playback-bar-happy">
+                <span class="current-time-happy">0:00</span>
+                <div class="progress-bar-happy"></div>
+                <span class="total-time-happy">0:00</span>
+            </div>
 
-    <div class="footer-controls">
-        <button id="btn-dislike">👎</button>
-        <button id="btn-prev">⏮</button>
-        <button id="btn-play">▶</button>
-        <button id="btn-next">⏭</button>
-        <button id="btn-like">🫶</button>
+            <footer class="category-footer">
+                <div class="footer-left">
+                    <div class="footer-album"></div>
+                    <div class="footer-text"></div>
+                </div>
+                <div class="footer-controls">
+                    <button id="btn-dislike">👎</button>
+                    <button id="btn-prev">⏮</button>
+                    <button id="btn-play">▶</button>
+                    <button id="btn-next">⏭</button>
+                    <button id="btn-like">🫶</button>
+                </div>
+            </footer>
+        </div>
     </div>
 
-    <div class="footer-empty"></div>
-</footer>
-        </div>
-    </div>
-<script src="happyPlaylist.js"></script>
-<script src="playlists.js"></script>
+    <script src="happyPlaylist.js"></script>
+    <script src="playlists.js"></script>
+</body>
 </html>
