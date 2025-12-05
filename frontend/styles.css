@@ -622,49 +622,6 @@ td:nth-child(4) {
     margin: 10px 0; 
 }
 
-/* --- NU ER ALLE KNAPPER FYLDT LILLA, SOM PÅ DIT BILLEDE --- */
-/* Knapper (<<, >>, Shuffle, Hjerte) */
-.button-happy {
-    font-size: 18px; 
-    font-weight: bold;
-    margin: 0 5px; 
-    cursor: pointer;
-    
-    background-color: var(--purple-main); 
-    color: white; 
-    
-    /* GØR KNAPPEN RUND */
-    padding: 8px 10px; /* Juster for at gøre den rund */
-    border-radius: 50%; /* Gør den cirkulær */
-    
-    opacity: 0.9;
-    transition: opacity 0.2s, box-shadow 0.2s;
-}
-
-/* Play/Pause knappen */
-.play-happy {
-    font-size: 24px; /* Gør den større */
-    border: none; 
-    background-color: var(--purple-main);
-    color: white; 
-    
-    /* GØR KNAPPEN RUND OG STØRRE */
-    border-radius: 50%; 
-    padding: 10px 14px 10px 16px; /* Juster for at centrere trekanten */
-    margin: 0 15px; 
-    box-shadow: 0 5px 10px rgba(138, 43, 226, 0.4); /* Tilføj skygge */
-}
-
-/* Hjertet: Sikrer hvid farve på ikon */
-.heart-happy {
-    color: white; 
-}
-
-/* Hover effekt for de fyldte knapper */
-.button-happy:hover, .play-happy:hover {
-    opacity: 1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 .opret-btn {
     margin: 20px auto; /* auto → centrér */
@@ -759,19 +716,6 @@ td:nth-child(4) {
     height: 100px;
     width: 100%;
     background: #ffffff;
-    border-top: 3px solid #c9b6ff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
-}
-
-/* ===== FOOTER MUSIC PLAYER ===== */
-.category-footer {
-    height: 100px;
-    width: 100%;
-    background: #ffffff;
-    border-top: 3px solid #c9b6ff;
     display: flex;
     justify-content: space-between;
     align-items: center;

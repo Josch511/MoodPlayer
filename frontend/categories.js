@@ -1,4 +1,7 @@
-
+// funktion til at gå tilbage til forrige side
+function goToHappy() {
+    window.location.href = "happyPlaylist.html"
+}
 document.addEventListener("DOMContentLoaded", () => {
     console.log("MoodPlayer category page loaded");
 
