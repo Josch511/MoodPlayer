@@ -831,3 +831,36 @@ td:nth-child(4) {
     box-shadow: 0 0 0 4px #000000;
     transform: translateY(-4px);
 }
+
+/* Playlist container */
+.playlist {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+/* Jede Song-Reihe */
+.song {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    padding: 10px 0;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.13);
+    font-size: 16px;
+}
+
+/* Links: Titel */
+.song-title {
+    justify-self: start;
+}
+
+/* Mitte: Artist */
+.song-artist {
+    justify-self: center;
+}
+
+/* Rechts: Zeit */
+.song-duration {
+    justify-self: end;
+    opacity: 0.8;
+}

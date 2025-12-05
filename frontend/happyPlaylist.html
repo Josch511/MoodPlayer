@@ -10,6 +10,7 @@
 <body>
 
     <div class="container-happy">
+        
         <div class="logoIndex">
             <img src="img/iconLogo.png"/>
         </div>
@@ -23,24 +24,10 @@
         </header>
 
         <div class="playlist-area-happy">
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>title</th>
-                        <th>album</th>
-                        <th>time</th>
-                    </tr>
-                </thead>
 
-                <!-- det er denne tbody der er lavet js funktion på i forhold til csv :) -->
+            <div id="happyPlaylist" class="playlist"></div>
 
-                <tbody id="happyPlaylist">
-                    <!-- CSV sangene bliver indsat her -->
-                </tbody>
-            </table>
         </div>
-        
 
         <div class="player-controls-happy">
             
@@ -63,7 +50,10 @@
                 <span class="button-happy heart-happy">&#x2665;</span>
                 <span class="button-happy shuffle-happy">&#x21C5;</span>
             </div>
+
         </div>
     </div>
-<script src="happyPlaylist.js"></script>
+
+    <script src="happyPlaylist.js"></script>
+</body>
 </html>
