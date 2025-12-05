@@ -128,7 +128,6 @@ nextBtn.addEventListener("click", () => {
     
         window.location.href = "categories.html";
         return;
-
     }
 
     renderQuestion();

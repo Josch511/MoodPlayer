@@ -2,6 +2,22 @@
 function goToHappy() {
     window.location.href = "happyPlaylist.html"
 }
+
+function goToSad(){
+    window.location.href = "sadPlaylist.html"
+}
+
+function goToParty(){
+    window.location.href = "workoutPlaylist.html"
+}
+
+function goToWorkoutPlaylist(){
+    window.location.href = "workoutPlaylist.html"
+}
+ function goToChill(){
+    window.location.href = "chillPlaylist.html"
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("MoodPlayer category page loaded");
 
