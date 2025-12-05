@@ -125,9 +125,10 @@ nextBtn.addEventListener("click", () => {
 // hvis det er 5. spørgsmål der er givet svar på alert "du er færdig"
 
     if (currentQuestionIndex >= questions.length) {
-        console.log("Brugerens svar:", userAnswers);
-        alert("Du er færdig");
+    
+        window.location.href = "categories.html";
         return;
+
     }
 
     renderQuestion();
