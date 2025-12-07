@@ -1,3 +1,10 @@
+// Kodning til happyPlaylist.html
+
+// funktion til at gå tilbage til forrige side
+function goBack() {
+    window.history.back();
+}
+
 // gør at den først loader content når hele html siden er loaded først 
 document.addEventListener("DOMContentLoaded", () => {
     // henter data fra happyPlaylist.csv
