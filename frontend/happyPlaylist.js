@@ -47,17 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 cover.style.backgroundSize = "cover";
                 cover.style.backgroundPosition = "center";
 
-                if (song.audio) {
-                    audio.src = song.audio;
-                } else {
-                    audio.src = "";
-                }
-
-            audio.play().catch(() => {});
+                audio.src = song.audio || "horse.mp3"; 
+                audio.play().catch(() => {});
 
             }
 
-              audio.addEventListener("ended", () => {
+            loadSong(0);
+
+            audio.addEventListener("ended", () => {
                 currentIndex = (currentIndex + 1) % playlist.length;
                 loadSong(currentIndex);
             });

@@ -895,12 +895,12 @@ footer {
 /* Kontrolknapper */
 .footer-controls {
     position: absolute;       /* så de er perfekt centreret */
-    left: 50%;
-    transform: translateX(-50%);
-    
+    right: 0%;
+    margin-right: 75px;
+    width: 70%;
     display: flex;
     gap: 18px;
-    justify-content: center;
+    
 }
 
 /* Den tomme div — lader den være */
