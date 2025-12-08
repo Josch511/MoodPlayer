@@ -1,6 +1,5 @@
 import { upload } from 'pg-upload';
 import { connect } from './connect.js';
-import { useSyncExternalStore } from 'react';
 
 console.log('Recreating database...');
 
@@ -8,18 +7,16 @@ const db = await connect();
 
 console.log('Dropping tables...');
 await db.query('DROP TABLE IF EXISTS playlists');
-await db.query('DROP TABLE IF EXISTS tracks');
+await db.query('DROP TABLE IF EXISTS mood_tracks');
 await db.query('DROP TABLE IF EXISTS partyPlaylist');
 await db.query('DROP TABLE IF EXISTS happyPlaylist');
 await db.query('DROP TABLE IF EXISTS sadPlaylist');
-await db.query('DROP TABLE IF EXISTS moodPlaylist');
-await db.query('DROP TABLE IF EXISTS users');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
 
 await db.query(`
-    CREATE TABLE tracks (
+    CREATE TABLE mood_tracks (
         number           INTEGER,
         track_id         TEXT,
         artists          TEXT,
@@ -64,28 +61,10 @@ await db.query(`
     )
 `);
 
-await db.query(`
-    CREATE TABLE sadPlaylist (
-        id          SERIAL,
-        artist      TEXT,
-        album       TEXT,
-        title       TEXT,
-        duration    INTEGER
-    )
-`);
-
-await db.query(`
-    Create TABLE moodPlaylist (
-        id          SERIAL,
-        artist      TEXT
-    )
-`);    
-
-
 console.log('Tables recreated.');
 
 await upload(db, 'db/tracks.csv', `
-    COPY tracks (
+    COPY mood_tracks (
         number, track_id, artists, album_name, track_name, popularity, duration_ms, explicit,
         danceability, energy, key, loudness, mode,
         speechiness, acousticness, instrumentalness, liveness,
