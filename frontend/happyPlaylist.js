@@ -5,29 +5,61 @@ function goBack() {
     window.history.back();
 }
 
-// gør at den først loader content når hele html siden er loaded først 
+
 document.addEventListener("DOMContentLoaded", () => {
-    // henter data fra happyPlaylist.csv
+
     fetch("/api/happyPlaylist")
-    // skriver csv filen om til json 
+
         .then(res => res.json())
-        // giver så den ny formaterede data i et array 
+
         .then(data => {
-            // finder html elementet der har id happyPlaylist 
+
             const tbody = document.getElementById("happyPlaylist");
-            // laver et loop over alle sange 
-            data.forEach((song, index) => {
-                // opretter en ny tabel OBS vi bruger det ikke ENDNU 
+            const audio = document.getElementById("audio-player");
+            const cover = document.querySelector(".footer-album");
+            const titleEl = document.getElementById("song-title");
+            const albumEl = document.getElementById("song-artist");
+
+            let playlist = data; 
+            let currentIndex = 0;
+
+            // indsætter sange i fra csv i tabellerne
+            playlist.forEach((song, index) => {
                 const tr = document.createElement("tr");
-                // vi puutter DOMen i HTML og fortæller hvad den skal vise 
                 tr.innerHTML = `
                     <td>${index + 1}</td>
                     <td>${song.title}</td>
                     <td>${song.album}</td>
                     <td>${song.duration}</td>
                 `;
-                // vi sender hele vores DOM til vores html element 
+
                 tbody.appendChild(tr);
+            });
+            // vælger den næste sang der skal spilles 
+            function loadSong(index) {
+                currentIndex = index;
+                const song = playlist[index];
+
+                titleEl.textContent = song.title;
+                albumEl.textContent = song.artist;
+
+                cover.style.backgroundImage = `url("${song.albumCover}")`;
+                cover.style.backgroundSize = "cover";
+                cover.style.backgroundPosition = "center";
+
+                if (song.audio) {
+                    audio.src = song.audio;
+                } else {
+                    audio.src = "";
+                }
+
+            audio.play().catch(() => {});
+
+            }
+
+              audio.addEventListener("ended", () => {
+                currentIndex = (currentIndex + 1) % playlist.length;
+                loadSong(currentIndex);
             });
         });
 });

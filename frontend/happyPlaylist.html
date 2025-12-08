@@ -49,14 +49,13 @@
                 <div class="progress-bar-happy"></div>
                 <span class="total-time-happy">0:00</span>
             </div>
+<!--
+<footer>
+    <div class="footer-album"></div>
 
-<footer class="category-footer">
-    <div class="footer-left">
-        <div class="footer-album"></div>
-        <div class="footer-text">
-            <div class="footer-title" id="song-title">Sunny Day</div>
-            <div id="song-artist">Good Vibes</div>
-        </div>
+    <div class="footer-info">
+        <div id="song-title">Sunny Day</div>
+        <div id="song-artist">Good Vibes</div>
     </div>
 
     <div class="footer-controls">
@@ -66,9 +65,31 @@
         <button id="btn-next">⏭</button>
         <button id="btn-like">🫶</button>
     </div>
+    
+    <audio class="footer-controls" controls autoplay muted>
+        <source src="horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="footer-empty"></div>
+</footer>
+-->
+
+<footer>
+    <div class="footer-album"></div>
+    
+    <div class="footer-info">
+        <div id="song-title"></div>
+        <div id="song-artist"></div>
+    </div>
+    
+    <audio id="audio-player" class="footer-controls" id="audio-player" controls autoplay></audio>
+   
 
     <div class="footer-empty"></div>
 </footer>
+
+
 
     <script src="happyPlaylist.js"></script>
 </body>
