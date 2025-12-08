@@ -6,11 +6,12 @@ console.log('Recreating database...');
 const db = await connect();
 
 console.log('Dropping tables...');
-await db.query('DROP TABLE IF EXISTS playlists');
 await db.query('DROP TABLE IF EXISTS mood_tracks');
 await db.query('DROP TABLE IF EXISTS partyPlaylist');
 await db.query('DROP TABLE IF EXISTS happyPlaylist');
 await db.query('DROP TABLE IF EXISTS sadPlaylist');
+await db.query('DROP TABLE IF EXISTS workoutPlaylist');
+await db.query('DROP TABLE IF EXISTS chillPlaylist');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
@@ -43,21 +44,51 @@ await db.query(`
 
 await db.query(`
     CREATE TABLE partyPlaylist (
-        id          SERIAL,
+        id          INTEGER,
         artist      TEXT,
         album       TEXT,
         title       TEXT,
-        duration    INTEGER
+        duration    TEXT
     )
 `);
 
 await db.query(`
     CREATE TABLE happyPlaylist (
-        id          SERIAL,
+        id          INTEGER,
         artist      TEXT,
         album       TEXT,
         title       TEXT,
-        duration    INTEGER
+        duration    TEXT
+    )
+`);
+
+await db.query(`
+    CREATE TABLE sadPlaylist (
+        id          INTEGER,
+        artist      TEXT,
+        album       TEXT,
+        title       TEXT,
+        duration    TEXT
+    )
+`);
+
+await db.query(`
+    CREATE TABLE workoutPlaylist (
+        id          INTEGER,
+        artist      TEXT,
+        album       TEXT,
+        title       TEXT,
+        duration    TEXT
+    )
+`);
+
+await db.query(`
+    CREATE TABLE chillPlaylist (
+        id          INTEGER,
+        artist      TEXT,
+        album       TEXT,
+        title       TEXT,
+        duration    TEXT
     )
 `);
 
@@ -84,9 +115,21 @@ await upload(db, 'db/happyPlaylist.csv', `
     ) FROM STDIN WITH CSV HEADER
 `);
 
-await upload(db, 'db/moodPlaylist.csv', `
-    COPY moodPlaylist (
-        id, artist
+await upload(db, 'db/sadPlaylist.csv', `
+    COPY sadPlaylist (
+        id, artist, album, title, duration
+    ) FROM STDIN WITH CSV HEADER
+`);
+
+await upload(db, 'db/workoutPlaylist.csv', `
+    COPY workoutPlaylist (
+        id, artist, album, title, duration
+    ) FROM STDIN WITH CSV HEADER
+`);
+
+await upload(db, 'db/chillPlaylist.csv', `
+    COPY chillPlaylist (
+        id, artist, album, title, duration
     ) FROM STDIN WITH CSV HEADER
 `);
 
