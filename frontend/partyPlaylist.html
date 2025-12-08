@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/iconLogo.png">
+    <title>Party Playlist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-happy">
+        <div class="logoIndex">
+            <img src="img/iconLogo.png"/>
+        </div>
+
+        <header class="header-happy">
+            <span class="arrow-happy" onclick="goBack()">&larr;</span>
+            <h1>Happy Playlist</h1>
+            <div class="icons-happy">
+                <span class="icon-happy">&#x1F464;</span>
+            </div>
+        </header>
+
+        <div class="playlist-area-happy">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>title</th>
+                        <th>album</th>
+                        <th>time</th>
+                    </tr>
+                </thead>
+                <tbody id="partyPlaylist">
+                    <!-- HER SKAL SANGENE KOMME -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="player-controls-happy">
+            <div class="album-info-happy">
+                <h3>Album cover</h3>
+                <p>...</p>
+                <p>...</p>
+            </div>
+
+            <div class="playback-bar-happy">
+                <span class="current-time-happy">0:00</span>
+                <div class="progress-bar-happy"></div>
+                <span class="total-time-happy">0:00</span>
+            </div>
+
+<footer class="category-footer">
+    <div class="footer-left">
+        <div class="footer-album"></div>
+        <div class="footer-text">
+            <div class="footer-title" id="song-title">Sunny Day</div>
+            <div id="song-artist">Good Vibes</div>
+        </div>
+    </div>
+
+    <div class="footer-controls">
+        <button id="btn-dislike">👎</button>
+        <button id="btn-prev">⏮</button>
+        <button id="btn-play">▶</button>
+        <button id="btn-next">⏭</button>
+        <button id="btn-like">🫶</button>
+    </div>
+
+    <div class="footer-empty"></div>
+</footer>
+
+    <script src="partyplaylist.js"></script>
+</body>
+</html>

@@ -6,7 +6,6 @@ import fs from "fs";
 import csv from "csv-parser";
 
 const db = await connect();
-const tracks = await loadTracks();
 const currentTracks = new Map();
 
 const port = process.env.PORT || 3003;
@@ -40,6 +39,16 @@ server.get("/api/happyPlaylist", (req, res) => {
         });
 });
 
+server.get("/api/partyPlaylist", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM partyPlaylist;");
+    res.json(result.rows); // send JSON tilbage
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
 
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
 
@@ -59,15 +68,6 @@ async function onFallback(request, response) {
 
 function onServerReady() {
     console.log('Webserver running on port', port);
-}
-
-async function loadTracks() {
-    const dbResult = await db.query(`
-        select *
-        from   tracks
-        where track_id = '5SuOikwiRyPMVoIQDJUgSV'
-    `);
-    return dbResult.rows;
 }
 
 function pickNextTrackFor(partyCode) {
