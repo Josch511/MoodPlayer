@@ -18,7 +18,7 @@ function goToChill(){
     window.location.href = "chillPlaylist.html"
 }
 function goToMood(){
-    window.location.href = "moodPlaylist.html"
+    window.location.href = "setupMood.html"
 }
 document.addEventListener("DOMContentLoaded", () => {
     console.log("MoodPlayer category page loaded");
