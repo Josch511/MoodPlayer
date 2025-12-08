@@ -757,12 +757,11 @@ td:nth-child(4) {
 /* ===== FOOTER MUSIC PLAYER ===== */
 .category-footer {
     height: 100px;
-    width: 100%;
+    width: 50%;
     background: #ffffff;
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    justify-content: center;
     align-items: center;
-    padding: 0 60px;
 }
 
 
@@ -807,17 +806,7 @@ td:nth-child(4) {
     opacity: 0.8;
 }
 
-/* ===== FOOTER MUSIC PLAYER ===== */
-.category-footer {
-    height: 100px;
-    width: 100%;
-    background: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
-    box-sizing: border-box;
-}
+
 
 /* Left section: Album + Text */
 .footer-left {
@@ -866,5 +855,5 @@ td:nth-child(4) {
 
 /* Right empty space for layout balance */
 .footer-empty {
-    width: 70px;
+    width: 100%;
 }

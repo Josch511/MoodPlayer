@@ -26,7 +26,7 @@ const questions = [
         title: "Vil du gerne have at musikken matcher eller ændrer dit humør?",
         answers: [
             { text: "Matcher" },
-            { text: "Ændre" },
+            { text: "Ændrer" },
             { text: "En god blanding" }
         ]
     },

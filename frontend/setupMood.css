@@ -58,20 +58,20 @@ body{
     background: #a020f0;
     border-radius: 4px;
     transition: width .3s ease;
+    
 }
 
 .answers-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 16px; 
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
 }
 
 .answer-btn {
-    padding: 20px 16px;
+    
     height: 30px;
     width: 150px;
-    margin: 5px;
+    
     font-size: 18px;
     font-weight: 500;
     border: 1px solid #ccc;
@@ -82,6 +82,7 @@ body{
     text-align: center;
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     min-height: 80px;
+    margin: 10px;
 }
 
 .answer-btn:hover {
@@ -150,6 +151,17 @@ body{
     background-color: #a020f0;
     cursor: not-allowed;
     color: #eee;
+}
+
+.box {
+   
+    border-radius: 12px ; 
+    background-color: #ffffff;
+    
+}
+
+.box1 {
+    border: 50px #333;
 }
 
 .logoIndex img {
