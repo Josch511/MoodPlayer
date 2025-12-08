@@ -1,3 +1,7 @@
+function goToGetToKnow() {
+    window.location.href = "getToKnow.html"
+}
+
 addEventListener("DOMContentLoaded", () => {
     let partyCode = establishPartyCode();
     history.replaceState(null, '', partyCode);
