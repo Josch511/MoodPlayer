@@ -10,6 +10,7 @@ async function loadPartyPlaylist() {
     row.innerHTML = `
         <td></td>
         <td>${partyPlaylist.title}</td>
+        <td>${partyPlaylist.artist}</td>
         <td>${partyPlaylist.album}</td>
         <td>${partyPlaylist.duration}</td>
     `;

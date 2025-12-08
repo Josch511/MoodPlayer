@@ -542,25 +542,24 @@ th:nth-child(2) {
     width: 45%; /* Lidt mindre, så album får plads */
     text-align: left; /* Header tekst til venstre */
 }
-td:nth-child(2) {
-    text-align: left; /* Data-tekst til venstre */
+
+/* Kolonne 3: artist (Centreret) */
+th:nth-child(3), td:nth-child(3) { 
+    width: 75%; 
+    text-align: center; /* Centrerer både header og data */
 }
 
-/* Kolonne 3: Album (Centreret) */
-th:nth-child(3), td:nth-child(3) { 
+/* Kolonne 4: Album (Centreret) */
+th:nth-child(4), td:nth-child(4) { 
     width: 200%; 
     text-align: center; /* Centrerer både header og data */
 }
 
-/* Kolonne 4: Time (Helt til højre) */
-th:nth-child(4) { 
-    width: 15%; /* Lidt mere plads */
+/* Kolonne 5: Time (Helt til højre) */
+th:nth-child(5), td:nth-child(5) { 
+    width: 5%; /* Lidt mere plads */
     text-align: right; /* Header tekst til højre */
 }
-td:nth-child(4) {
-    text-align: right; /* Data-tekst til højre */
-}
-
 
 /* --- PLAYER-KONTROLOMRÅDET (Kompakt) --- */
 .player-controls-happy {

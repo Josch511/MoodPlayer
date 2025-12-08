@@ -40,14 +40,15 @@ server.get("/api/happyPlaylist", (req, res) => {
 });
 
 server.get("/api/partyPlaylist", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM partyPlaylist;");
-    res.json(result.rows); // send JSON tilbage
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database error" });
-  }
+    try {
+        const result = await db.query("SELECT * FROM partyPlaylist ORDER BY id");
+        res.json(result.rows);
+    } catch (err) {
+        console.error("DB ERROR:", err);
+        res.status(500).json({ error: "Database error" });
+    }
 });
+
 
 
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
