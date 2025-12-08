@@ -1,13 +1,10 @@
 // spørgsmål + svarmuligheder 
 const questions = [
     {
-        title: "Hvordan føler du dig lige nu?",
+        title: "Hvilke følelser har du lige nu?",
         answers: [
-            { text: "Glad" },
             { text: "Rolig" },
-            { text: "Trist" },
             { text: "Vred" },
-            { text: "Nostalgisk" },
             { text: "Forelsket" },
             { text: "Heartbroken" }
         ]
@@ -15,44 +12,25 @@ const questions = [
     {
         title: "Hvilket energiniveau passer bedst til hvordan du har det lige nu?",
         answers: [
-            { text: "Meget lav" },
             { text: "Lav" },
             { text: "Medium" },
             { text: "Høj" },
-            { text: "Meget høj" }
         ]
     },
     {
-        title: "Vil du gerne have at musikken matcher eller ændrer dit humør?",
+        title: "Hvilken stemning foretækker du?",
         answers: [
-            { text: "Matcher" },
-            { text: "Ændrer" },
-            { text: "En god blanding" }
-        ]
-    },
-    {
-        title: "Hvordan vil du have musikken føles?",
-        answers: [
-            { text: "Varm" },
             { text: "Mørk" },
             { text: "Lys" },
-            { text: "Dramatisk" },
-            { text: "Chill" },
-            { text: "Groovy" },
-            { text: "Melankolsk" },
-            { text: "Dreamy" }
+            { text: "Blandet" }
         ]
     },
     {
-        title: "Hvor er du lige nu?",
+        title: "Hvor meget har du lyst til at danse til musikken?",
         answers: [
-            { text: "Derhjemme" },
-            { text: "Transport" },
-            { text: "Skole" },
-            { text: "Naturen" },
-            { text: "Arbejde" },
-            { text: "Gå tur" },
-            { text: "Stranden" }
+            { text: "Overhovedet ikke" },
+            { text: "Sådan nogenlunde" },
+            { text: "Ja meget" }
         ]
     },
 ];
