@@ -1,5 +1,6 @@
 import { upload } from 'pg-upload';
 import { connect } from './connect.js';
+import { useSyncExternalStore } from 'react';
 
 console.log('Recreating database...');
 
@@ -12,6 +13,7 @@ await db.query('DROP TABLE IF EXISTS partyPlaylist');
 await db.query('DROP TABLE IF EXISTS happyPlaylist');
 await db.query('DROP TABLE IF EXISTS sadPlaylist');
 await db.query('DROP TABLE IF EXISTS moodPlaylist');
+await db.query('DROP TABLE IF EXISTS users');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
