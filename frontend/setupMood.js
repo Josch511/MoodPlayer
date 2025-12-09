@@ -1,3 +1,6 @@
+function goToMoodPlaylist() {
+    window.location.href = "moodPlaylist.html";
+}
 // spørgsmål + svarmuligheder 
 const questions = [
     {
@@ -116,7 +119,7 @@ function updateBackButton() {
 // Fortsæt knappens funktion 
 nextBtn.addEventListener("click", () => {
 
-    if (!userAnswers[currentQuestionIndex]) return;
+if (!userAnswers[currentQuestionIndex]) return;
 
     currentQuestionIndex++;
 
