@@ -38,6 +38,7 @@ const questions = [
 // starter på 1. spørgsmål og gemmer svar i et tomt array
 let currentQuestionIndex = 0;
 let userAnswers = [];
+console.log(userAnswers);
 
 // henter elementerne fra HTML 
 const titleEl = document.getElementById("question-title");
@@ -121,14 +122,33 @@ nextBtn.addEventListener("click", () => {
 
 // hvis det er 5. spørgsmål der er givet svar på alert "du er færdig"
 
-    if (currentQuestionIndex >= questions.length) {
-        console.log("Brugerens svar:", userAnswers);
-        alert("Du er færdig");
-        return;
+if (currentQuestionIndex >= questions.length) {
+    console.log("Brugerens svar:", userAnswers);
+
+    if (userAnswers[0] === "Rolig") {
+        valence += 2;
+        tempo -= 10;
+    }
+    if (userAnswers[0] === "Vred") {
+        valence -= 2;
+        energy += 2;
     }
 
-    renderQuestion();
-});
+    if (userAnswers[1] === "Lav") {
+        tempo -= 20;
+    }
+    if (userAnswers[1] === "Høj") {
+        tempo += 20;
+    }
+
+    console.log("Valence:", valence);
+    console.log("Tempo:", tempo);
+    console.log("Loudness:", loudness);
+    console.log("Genre:", track_genre);
+
+    alert("Du er færdig");
+    return;
+}
 
 // Tilbage knappens funktion 
 backBtn.addEventListener("click", () => {
@@ -140,3 +160,4 @@ backBtn.addEventListener("click", () => {
 
 // Spørgsmål kommer frem med det samme af sig selv 
 document.addEventListener("DOMContentLoaded", renderQuestion);
+
