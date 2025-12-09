@@ -58,7 +58,8 @@ await db.query(`
         artist      TEXT,
         album       TEXT,
         title       TEXT,
-        duration    TEXT
+        duration    TEXT,
+        albumcover  TEXT
     )
 `);
 
@@ -103,6 +104,14 @@ await upload(db, 'db/tracks.csv', `
     ) FROM STDIN WITH CSV HEADER
 `);
 
+await db.query('create index track_id_index on mood_tracks (track_id)')
+
+await db.query('delete from mood_tracks m where number > (select min(number) from mood_tracks where track_id = m.track_id)')
+
+await db.query('drop index track_id_index')
+
+await db.query('create unique index track_id_index on mood_tracks (track_id)')
+
 await upload(db, 'db/partyPlaylist.csv', `
     COPY partyPlaylist (
         id, artist, album, title, duration
@@ -111,7 +120,7 @@ await upload(db, 'db/partyPlaylist.csv', `
 
 await upload(db, 'db/happyPlaylist.csv', `
     COPY happyPlaylist (
-        id, artist, album, title, duration
+        id, artist, album, title, duration, albumCover
     ) FROM STDIN WITH CSV HEADER
 `);
 

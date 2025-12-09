@@ -49,7 +49,43 @@ server.get("/api/partyPlaylist", async (req, res) => {
     }
 });
 
+// API ROUTE TIL MATCHED PLAYLIST BASERET PÅ BRUGER SVAR
+server.post("/api/matchedPlaylist", async (req, res) => {
+    try {
+        const { valence, tempo, loudness, energy, acousticness, danceability, instrumentalness } = req.body;
 
+        // Validering af input
+        if (valence === undefined || tempo === undefined || loudness === undefined || 
+            energy === undefined || acousticness === undefined || danceability === undefined || 
+            instrumentalness === undefined) {
+            return res.status(400).json({ error: "Missing audio features" });
+        }
+
+        // SQL query med range-baseret matching
+        const result = await db.query(`
+            SELECT track_name, artists, album_name, duration_ms, popularity,
+                   valence, tempo, loudness, energy, acousticness, danceability, instrumentalness
+            FROM mood_tracks 
+            WHERE ABS(valence - $1) < 0.25
+              AND ABS(energy - $2) < 0.25
+              AND ABS(danceability - $3) < 0.25
+              AND ABS(instrumentalness - $4) < 0.25
+              AND ABS(acousticness - $5) < 0.25
+              AND ABS(tempo - $6) < 50
+              AND ABS(loudness - $7) < 3
+            ORDER BY popularity DESC
+            LIMIT 25
+        `, [valence, energy, danceability, instrumentalness, acousticness, tempo, loudness]);
+
+        console.log(`Found ${result.rows.length} matched songs for features:`, 
+                    { valence, tempo, loudness, energy, acousticness, danceability, instrumentalness });
+
+        res.json(result.rows);
+    } catch (err) {
+        console.error("DB ERROR:", err);
+        res.status(500).json({ error: "Database error" });
+    }
+});
 
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
 

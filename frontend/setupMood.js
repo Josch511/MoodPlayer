@@ -120,35 +120,112 @@ nextBtn.addEventListener("click", () => {
 
     currentQuestionIndex++;
 
-// hvis det er 5. spørgsmål der er givet svar på alert "du er færdig"
+    // hvis det er 5. spørgsmål der er givet svar på alert "du er færdig"
+    if (currentQuestionIndex >= questions.length) {
+        console.log("Brugerens svar:", userAnswers);
 
-if (currentQuestionIndex >= questions.length) {
-    console.log("Brugerens svar:", userAnswers);
+        valence = 0;
+        tempo = 0;
+        loudness = 0;
+        energy = 0;
+        acousticness = 0;
+        danceability = 0;
+        instrumentalness = 0;
 
-    if (userAnswers[0] === "Rolig") {
-        valence += 2;
-        tempo -= 10;
+        // FØLELSER
+        if (userAnswers[0] === "Rolig") {
+            valence += 0.4;
+        }
+        if (userAnswers[0] === "Vred") {
+            valence += 0.15;
+        }
+        if (userAnswers[0] === "Forelsket") {
+            valence += 0.6;
+            acousticness += 0.5;
+        }
+        if (userAnswers[0] === "Heartbroken") {
+            valence += 0.2;
+        }
+
+        // ENERGI
+        if (userAnswers[1] === "Lav") {
+            tempo += 50;
+            energy += 0.4;
+        }
+        if (userAnswers[1] === "Medium") {
+            tempo += 100;
+            energy += 0.6;
+        }
+        if (userAnswers[1] === "Høj") {
+            tempo += 130;
+            energy += 0.9;
+        }
+
+        // STEMNING
+        if (userAnswers[2] === "Mørk") {
+            instrumentalness += 0.5;
+            loudness += -5;
+        }
+        if (userAnswers[2] === "Lys") {
+            instrumentalness += 0.2;
+            loudness += -8;
+        }
+        if (userAnswers[2] === "Blandet") {
+            instrumentalness += 0.35;
+        }
+
+        // DANS
+        if (userAnswers[3] === "Overhovedet ikke") {
+            energy += 0.2;
+            danceability += 0.4;
+        }
+        if (userAnswers[3] === "Sådan nogenlunde") {
+            energy += 0.5;
+            danceability += 0.6;
+        }
+        if (userAnswers[3] === "Ja meget") {
+            energy += 0.8;
+            danceability += 0.9;
+        }
+        // sørger for at værdierne ikke overstiger 1
+        if (energy > 1) energy = 1;
+
+        console.log("Valence:", valence);
+        console.log("Tempo:", tempo);
+        console.log("Loudness:", loudness);
+        console.log("Energy:", energy);
+        console.log("Acousticness:", acousticness);
+        console.log("Danceability:", danceability);
+        console.log("Instrumentalness:", instrumentalness);
+
+        // Send audio features to API and get matched songs
+        fetch("/api/matchedPlaylist", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                valence,
+                tempo,
+                loudness,
+                energy,
+                acousticness,
+                danceability,
+                instrumentalness
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log("Matched songs:", data);
+        })
+        .catch(err => {
+            console.error("Error fetching matched playlist:", err);
+        });
+        return;
     }
-    if (userAnswers[0] === "Vred") {
-        valence -= 2;
-        energy += 2;
-    }
 
-    if (userAnswers[1] === "Lav") {
-        tempo -= 20;
-    }
-    if (userAnswers[1] === "Høj") {
-        tempo += 20;
-    }
-
-    console.log("Valence:", valence);
-    console.log("Tempo:", tempo);
-    console.log("Loudness:", loudness);
-    console.log("Genre:", track_genre);
-
-    alert("Du er færdig");
-    return;
-}
+    renderQuestion();
+});
 
 // Tilbage knappens funktion 
 backBtn.addEventListener("click", () => {
@@ -158,6 +235,7 @@ backBtn.addEventListener("click", () => {
     renderQuestion();
 });
 
-// Spørgsmål kommer frem med det samme af sig selv 
-document.addEventListener("DOMContentLoaded", renderQuestion);
+// Render first question on page load
+renderQuestion();
+
 
