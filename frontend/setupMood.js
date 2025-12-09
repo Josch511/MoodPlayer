@@ -1,6 +1,3 @@
-function goToMoodPlaylist() {
-    window.location.href = "moodPlaylist.html";
-}
 // spørgsmål + svarmuligheder 
 const questions = [
     {
@@ -119,7 +116,7 @@ function updateBackButton() {
 // Fortsæt knappens funktion 
 nextBtn.addEventListener("click", () => {
 
-if (!userAnswers[currentQuestionIndex]) return;
+    if (!userAnswers[currentQuestionIndex]) return;
 
     currentQuestionIndex++;
 
@@ -220,7 +217,7 @@ if (!userAnswers[currentQuestionIndex]) return;
         .then(res => res.json())
         .then(data => {
             console.log("Matched songs:", data);
-            window.location.href = "/moodplaylist.html";
+            //window.location.href = "/moodplaylist.html";
         })
         .catch(err => {
             console.error("Error fetching matched playlist:", err);
