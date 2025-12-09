@@ -176,11 +176,13 @@ h1 {
 
 /* Progress bar */
 .progress-wrapper {
-    width: 80%;
+    width: 100%;
     height: 6px;
     background: #e5e5e5;
     border-radius: 10px;
     margin: 25px auto 5px auto;
+    display: flex;
+    
 }
 
 .progress-bar {
@@ -753,14 +755,6 @@ th:nth-child(5), td:nth-child(5) {
     transform: translateY(-6px);
 }
 
-/* ===== FOOTER MUSIC PLAYER ===== */
-.category-footer {
-    height: 100px;
-    width: 50%;
-    background: #ffffff;
-    display: block;
-    
-}
 
 
 /* categories.css done here */
@@ -806,80 +800,13 @@ th:nth-child(5), td:nth-child(5) {
 
 
 
-/* Left section: Album + Text */
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.footer-text {
-    font-size: 14px;
-    color: #2a004d;
-}
-
-.footer-title {
-    font-weight: 700;
-}
 
 
 
-.footer-controls button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: black;
-    transition: .2s ease;
-}
-
-.footer-controls button:hover {
-    transform: scale(1.15);
-    color: #333;
-}
 
 
-footer {
-    position: fixed;          /* hvis du vil have den klistret fast nederst */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-
-    display: grid;
-    grid-template-columns: auto 1fr auto; 
-    align-items: center;
-
-    background-color: #ffffff;
-    color: rgb(2, 2, 2);
-    padding: 0 20px;
-
-    border-top: 1px solid black;
-}
-
-/* Album cover */
-.footer-album {
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
-    margin-left: 0px;
-
-    background-image: url("img/cd.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    background-color: #e0e0e0; /* fallback farve */
-}
 
 
-/* Sanginfo */
-.footer-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 12px;  
-}
 
 #song-title {
     font-weight: bold;
@@ -892,20 +819,171 @@ footer {
     opacity: 0.7;
 }
 
-/* Kontrolknapper */
-.footer-controls {
-    position: absolute;       /* så de er perfekt centreret */
-    right: 0%;
-    margin-right: 75px;
-    width: 70%;
-    display: flex;
-    gap: 18px;
-    
-}
 
 /* Den tomme div — lader den være */
-.footer-empty {
+
+
+.playback-bar-happy {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* afstand mellem tid og bar */
+    width: 70%;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.current-time-happy,
+.total-time-happy {
+    width: 240px;
+    text-align: center;
+}
+
+.progress-container {
+    flex: 1; /* fylder alt plads mellem tidene */
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    justify-content: center; /* sikrer at bar ikke "stikker ud" */
+}
+
+.progress-bar-happy {
+    width: 0%; /* denne opdateres med JS */
+    height: 100%;
+    background-color: purple;
+    border-radius: 4px;
+    transition: width 0.2s linear;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* start på venstre, slut på højre */
+  width: 300px; /* eller efter behov */
+}
+
+.controls {
+  display: flex;
+  gap: 10px; /* afstand mellem knapper */
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  margin-top: 5px; /* adskillelse fra knapper */
+  overflow: hidden; /* sikrer at baren ikke går udenfor */
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: purple;
+  border-radius: 4px;
+  display: block;
+}
+
+/* FOOTER LAYOUT */
+.footer {
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+}
+
+/* VENSTRE – album cover */
+.footer-album {
     width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    margin-left: 30px;
+    background-image: url(img/cd.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-right: 25px;
+}
+
+/* MIDTEN – knapper + progress bar */
+.footer-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PLAY KNAPPER */
+.audio-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 6px;
+}
+
+.audio-controls button {
+    padding: 8px 14px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #a020f0;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.audio-controls button:hover {
+    background: #8b1dd1;
+}
+
+/* PROGRESS BAR */
+.progress-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.start-time,
+.end-time {
+    font-size: 12px;
+    color: #444;
+}
+
+.progress-bar-wrapper {
+    flex: 1;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #a020f0;
+    transition: width 0.3s ease;
+}
+
+/* HØJRE – titel + artist */
+.footer-info {
+    text-align: left;
+    min-width: 140px;
+}
+
+#song-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#song-artist {
+    font-size: 12px;
+    color: #666;
 }
 
 /* ===== RESULTS PAGE STYLING ===== */
@@ -1087,5 +1165,6 @@ footer {
 .home-btn:hover {
     background-color: #7a1fb8;
 }
+
 
 
