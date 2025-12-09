@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container-happy">
         <div class="logoIndex">
-            <img src="img/logoTilMoodPlayer.png"/>
+            <img src="img/iconLogo.png"/>
         </div>
-        
+
         <header class="header-happy">
-            <button class="arrow-happy" onclick="goBack()">&larr;</button>
-            <h1>Mood Playlist</h1> 
+            <span class="arrow-happy" onclick="goBack()">&larr;</span>
+            <h1>Mood Playlist</h1>
             <div class="icons-happy">
-                <span class="icon-happy">&#x1F464;</span> 
+                <span class="icon-happy">&#x1F464;</span>
             </div>
         </header>
 
@@ -27,26 +26,19 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>title</th>
-                        <th>album</th>
-                        <th>time</th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Time</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr><td>1</td><td></td><td></td><td></td></tr>
-                    <tr><td>2</td><td></td><td></td><td></td></tr>
-                    <tr><td>3</td><td></td><td></td><td></td></tr>
-                    <tr><td>4</td><td></td><td></td><td></td></tr>
-                    <tr><td>5</td><td></td><td></td><td></td></tr>
-                    <tr><td>6</td><td></td><td></td><td></td></tr>
-                    <tr><td>7</td><td></td><td></td><td></td></tr>
-                    <tr><td>8</td><td></td><td></td><td></td></tr>
+                <tbody id="moodplaylist">
+                    <!-- CSV sangene bliver indsat her -->
                 </tbody>
             </table>
         </div>
 
         <div class="player-controls-happy">
-            
             <div class="album-info-happy">
                 <h3>Album cover</h3>
                 <p>...</p>
@@ -58,16 +50,51 @@
                 <div class="progress-bar-happy"></div>
                 <span class="total-time-happy">0:00</span>
             </div>
+<!--
+<footer>
+    <div class="footer-album"></div>
 
-            <div class="media-buttons-happy">
-                <span class="button-happy">&lt;&lt;</span>
-                <span class="button-happy play-happy">&#9654;</span>
-                <span class="button-happy">&gt;&gt;</span>
-                <span class="button-happy heart-happy">&#x2665;</span>
-                <span class="button-happy shuffle-happy">&#x21C5;</span>
-            </div>
-        </div>
+    <div class="footer-info">
+        <div id="song-title">Sunny Day</div>
+        <div id="song-artist">Good Vibes</div>
     </div>
-<script src="playlists.js"></script>
+
+    <div class="footer-controls">
+        <button id="btn-dislike">👎</button>
+        <button id="btn-prev">⏮</button>
+        <button id="btn-play">▶</button>
+        <button id="btn-next">⏭</button>
+        <button id="btn-like">🫶</button>
+    </div>
+    
+    <audio class="footer-controls" controls autoplay muted>
+        <source src="horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="footer-empty"></div>
+</footer>
+-->
+
+<footer>
+    <div class="footer-album"></div>
+    
+    <div class="footer-info">
+        <div id="song-title"></div>
+        <div id="song-artist"></div>
+    </div>
+    
+    <audio id="audio-player" class="footer-controls" id="audio-player" controls autoplay></audio>
+   
+
+    <div class="footer-empty"></div>
+</footer>
+
+
+
+    <script src="happyPlaylist.js"></script>
+    <script src="moodplaylist.js"></script>
+    <script src="setupMood.js"></script>
+
 </body>
 </html>

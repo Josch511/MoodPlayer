@@ -217,6 +217,7 @@ nextBtn.addEventListener("click", () => {
         .then(res => res.json())
         .then(data => {
             console.log("Matched songs:", data);
+            window.location.href = "/moodplaylist.html";
         })
         .catch(err => {
             console.error("Error fetching matched playlist:", err);
@@ -238,4 +239,34 @@ backBtn.addEventListener("click", () => {
 // Render first question on page load
 renderQuestion();
 
+async function loadPartyPlaylist() {
+    try {
+        const res = await fetch("/api/moodplaylist");
+        playlist = await res.json();
 
+        // Fyld tabel med sange
+        playlist.forEach((song, index) => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${data.track_name}</td>
+                <td>${data.artist}</td>
+                <td>${data.album.name}</td>
+            `;
+
+            // Klik på rækken for at afspille sangen
+            row.addEventListener("click", () => loadSong(index));
+
+            tbody.appendChild(row);
+        });
+
+        // Afspil første sang automatisk
+        if (playlist.length > 0) {
+            loadSong(0);
+        }
+
+    } catch (error) {
+        console.error("Fejl ved hentning af playlist:", error);
+    }
+}
