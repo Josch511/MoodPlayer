@@ -1,22 +1,37 @@
 let playlist = [];
 let currentIndex = 0;
 let seconds = 0;
-const SongLength = 20; // hver sang varer 20 sekunder
+const SongLength = 10;
 let timerInterval = null;
+let isPlaying = false; // ⭐️ MÅTTE tilføjes
 
-//DOM
-
-
+// DOM
 const titleEl = document.getElementById("song-title");
 const albumEl = document.getElementById("song-artist");
 const currentTimeEl = document.querySelector(".start-time");
 const totalTimeEl = document.querySelector(".end-time");
 const tbody = document.getElementById("happyPlaylist");
 const progressBar = document.querySelector(".progress-bar");
+const playBtn = document.getElementById("play");
 
 // Funktion til tilbageknap
 function goBack() {
     window.location.href = "categories.html";
+}
+
+// 🔥 Play / Pause toggle
+function togglePlay() {
+    if (isPlaying) {
+        // Pause
+        clearInterval(timerInterval);
+        isPlaying = false;
+        playBtn.textContent = "▶";
+    } else {
+        // Play
+        isPlaying = true;
+        playBtn.textContent = "⏸";
+        startTimer();
+    }
 }
 
 // Hent playlist fra API
@@ -39,6 +54,8 @@ async function loadPartyPlaylist() {
 
         if (playlist.length > 0) {
             loadSong(0);
+            isPlaying = true;  
+            playBtn.textContent = "⏸"; 
             startTimer();
         }
     } catch (error) {
@@ -60,12 +77,13 @@ function loadSong(index) {
     if (progressBar) progressBar.style.width = "0%";
 }
 
-// Dummy-timer, der tæller og skifter sang
+// Dummy-timer
 function startTimer() {
     if (timerInterval) clearInterval(timerInterval);
 
     timerInterval = setInterval(() => {
-        if (playlist.length == 0) return;
+        if (!isPlaying) return;
+        if (playlist.length === 0) return;
 
         seconds++;
 
@@ -80,7 +98,7 @@ function startTimer() {
             progressBar.style.width = `${percent}%`;
         }
 
-        // Skift sang, når tiden er ovre
+        // Skift sang når tiden er ovre
         if (seconds >= SongLength) {
             currentIndex = (currentIndex + 1) % playlist.length;
             loadSong(currentIndex);
