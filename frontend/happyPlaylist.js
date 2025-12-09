@@ -5,8 +5,8 @@ const SongLength = 20; // hver sang varer 20 sekunder
 let timerInterval = null;
 
 //DOM
-const audio = document.getElementById("audio-player");
-const cover = document.querySelector(".footer-album");
+
+
 const titleEl = document.getElementById("song-title");
 const albumEl = document.getElementById("song-artist");
 const currentTimeEl = document.querySelector(".start-time");
@@ -14,9 +14,9 @@ const totalTimeEl = document.querySelector(".end-time");
 const tbody = document.getElementById("happyPlaylist");
 const progressBar = document.querySelector(".progress-bar");
 
-// Funktion til at gå tilbage til forrige side
+// Funktion til tilbageknap
 function goBack() {
-    window.location.href("categories.html");
+    window.location.href = "categories.html";
 }
 
 // Hent playlist fra API
