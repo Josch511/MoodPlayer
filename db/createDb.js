@@ -118,7 +118,7 @@ await db.query('create unique index track_id_index on mood_tracks (track_id)')
 
 await upload(db, 'db/partyPlaylist.csv', `
     COPY partyPlaylist (
-        id, artist, album, title, duration
+        id, artist, album, title, duration, albumCover
     ) FROM STDIN WITH CSV HEADER
 `);
 
@@ -130,19 +130,19 @@ await upload(db, 'db/happyPlaylist.csv', `
 
 await upload(db, 'db/sadPlaylist.csv', `
     COPY sadPlaylist (
-        id, artist, album, title, duration
+        id, artist, album, title, duration, albumCover
     ) FROM STDIN WITH CSV HEADER
 `);
 
 await upload(db, 'db/workoutPlaylist.csv', `
     COPY workoutPlaylist (
-        id, artist, album, title, duration
+        id, artist, album, title, duration, albumCover
     ) FROM STDIN WITH CSV HEADER
 `);
 
 await upload(db, 'db/chillPlaylist.csv', `
     COPY chillPlaylist (
-        id, artist, album, title, duration
+        id, artist, album, title, duration, albumCover
     ) FROM STDIN WITH CSV HEADER
 `);
 
