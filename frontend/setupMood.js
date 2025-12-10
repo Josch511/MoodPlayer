@@ -50,54 +50,32 @@ const backBtn = document.getElementById("back-btn");
 
 // viser det gældne spørgsmål på siden 
 function renderQuestion() {
-    // henter det spørgsmål der matcher currentQuestionIndex
     const question = questions[currentQuestionIndex];
-
-    // sætter overskriften i HTML til spørgsmålets tekst
     titleEl.textContent = question.title;
-
-    // fjerner tidligere svar-knapper, så vi kan vise de nye
     answersEl.innerHTML = "";
-
-    // deaktiverer fortsætknappen indtil der er valgt et svar
     nextBtn.disabled = true;
 
-    // looper over svarmulighederne til det gældne spørgsmål
     question.answers.forEach((answer) => {
-        // opretter en knap til hvert svar
         const btn = document.createElement("button");
-
-        // giver knappen CSS-klassen answer-btn
         btn.classList.add("answer-btn");
-
-        // gør så svarmulighederne er det der står på knapperne
         btn.textContent = answer.text;
 
         // laver klik funktion på selve svarmuligheds knappen
         btn.addEventListener("click", () => {
-
-            // fjern "active" fra ALLE knapper, så kun én kan blive valgt
             document.querySelectorAll(".answer-btn")
                 .forEach(b => b.classList.remove("active"));
 
-            // markere det klikkede svar
             btn.classList.add("active");
 
-            // gemmer svaret i userAnswers array 
             userAnswers[currentQuestionIndex] = answer.text;
 
-            // aktiverer fortsæt knappen
             nextBtn.disabled = false;
         });
-
-        // Tilføj knappen til svar-containeren på html siden
         answersEl.appendChild(btn);
     });
 
-    // opdatere progress-bar og hvilket nummer i rækken vi er på
+    
     updateProgress();
-
-    // vis eller skjul tilbage-knappen afhængig af om vi er på spørgsmål 0 eller 1
     updateBackButton();
 }
 
@@ -120,7 +98,7 @@ nextBtn.addEventListener("click", () => {
 
     currentQuestionIndex++;
 
-    // hvis det er 5. spørgsmål der er givet svar på alert "du er færdig"
+    // efter 5. spørgsmål
     if (currentQuestionIndex >= questions.length) {
         console.log("Brugerens svar:", userAnswers);
 
