@@ -404,9 +404,9 @@ h1 {
 }
 
 .logoIndex img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px auto;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 0px auto;
     display: block;
 }
 
