@@ -1,12 +1,8 @@
 import express from 'express';
 import path from 'path';
 import { connect } from '../db/connect.js';
-import { play } from './player.js';
-import fs from "fs";
-import csv from "csv-parser";
 
 const db = await connect();
-const currentTracks = new Map();
 
 const port = process.env.PORT || 3003;
 const server = express();
@@ -109,11 +105,6 @@ server.post("/api/matchedPlaylist", async (req, res) => {
     }
 });
 
-server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
-
-// den her SKAL være til sidst ellers loader den ik de get pointer der kommer efterfølgende ;)
-server.get(/\/[a-zA-Z0-9-_/]+/, onFallback);
-
 server.listen(port, onServerReady);
 
 function onEachRequest(request, response, next) {
@@ -127,22 +118,4 @@ async function onFallback(request, response) {
 
 function onServerReady() {
     console.log('Webserver running on port', port);
-}
-
-function pickNextTrackFor(partyCode) {
-    const trackIndex = Math.floor(Math.random() * tracks.length)
-    currentTracks.set(partyCode, trackIndex);
-    const track = tracks[trackIndex];
-    play(partyCode, track.track_id, track.duration, Date.now(), () => currentTracks.delete(partyCode));
-    return trackIndex;
-}
-
-async function onGetCurrentTrackAtParty(request, response) {
-    const partyCode = request.params.partyCode;
-    let trackIndex = currentTracks.get(partyCode);
-    if (trackIndex === undefined) {
-        trackIndex = pickNextTrackFor(partyCode);
-    }
-    const track = tracks[trackIndex];
-    response.json(track);
 }
