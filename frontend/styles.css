@@ -404,9 +404,9 @@ h1 {
 }
 
 .logoIndex img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px auto;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 0px auto;
     display: block;
 }
 
@@ -1371,6 +1371,77 @@ body.dark-mode a,
 body.dark-mode td,
 body.dark-mode th {
     color: #ffffff !important;
+}
+
+/* border control*/
+/* Remove white borders + stripes in Dark Mode */
+body.dark-mode th,
+body.dark-mode td {
+    border-color: #222 !important;
+}
+
+body.dark-mode thead th {
+    border-color: #222 !important;
+}
+
+body.dark-mode tbody tr:hover {
+    background-color: #1a0033 !important; /* subtle purple hover */
+}
+
+body.dark-mode .playlist-area-happy,
+body.dark-mode table {
+    border-color: #222 !important;
+}
+
+/* Remove the very last row line above the footer */
+body.dark-mode tbody tr:last-child td {
+    border-bottom: none !important;
+}
+/* 💣 Final Guaranteed Fix — REMOVE ALL WHITE STRIPES ABOVE FOOTER */
+body.dark-mode .playlist-area-happy,
+body.dark-mode .playlist-area-happy *,
+body.dark-mode .player-controls-happy,
+body.dark-mode .player-controls-happy *,
+body.dark-mode table,
+body.dark-mode table *,
+body.dark-mode tr,
+body.dark-mode td,
+body.dark-mode th {
+    background: #000000 !important;
+    border-color: #000000 !important;
+}
+/* 🎨 Restore images in Dark Mode */
+body.dark-mode img {
+    background: transparent !important;
+    filter: none !important;
+}
+
+/* 🎨 Restore images in Dark Mode */
+body.dark-mode img {
+    background: transparent !important;
+    filter: none !important;
+}
+
+/* White progress bar in Dark Mode */
+body.dark-mode .progress-bar {
+    background: #ffffff !important;
+}
+/* ✨ Show images normally in Dark Mode */
+body.dark-mode img,
+body.dark-mode .footer-album,
+body.dark-mode .music-cover {
+    background: transparent !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+/* Show album image normally in Dark Mode */
+body.dark-mode .footer-album {
+    background: none !important;
+    background-image: url('img/cd.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* darkmode ends*/

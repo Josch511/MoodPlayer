@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="img/iconLogo.png">
-    <title>Vælg Kategori</title>
+    <title>Vælg kategori</title>
     <button class="dark-toggle">🌙</button>
-
-
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,20 +21,15 @@
 
   <main class="category-main">
     <div class="category-grid">
-      <button class="category-card" data-category="Trist" onclick="goToSad()">Sad</button>
-      <button class="category-card" data-category="Glad" onclick="goToHappy()">Happy</button>
-      <button class="category-card" data-category="Chill" onclick="goToChill()">Chill</button>
-      <button class="category-card" data-category="Fest" onclick="goToParty()">Party</button>
-      <button class="category-card" data-category="Træning" onclick="goToWorkout()">Workout</button>
-      <button class="category-card" data-category="Mood playlist" onclick="goToMood()">Mood playlist</button>
+      <button class="category-card" onclick="goToSad()">Sad</button>
+      <button class="category-card" onclick="goToHappy()">Happy</button>
+      <button class="category-card" onclick="goToChill()">Chill</button>
+      <button class="category-card" onclick="goToParty()">Party</button>
+      <button class="category-card" onclick="goToWorkout()">Workout</button>
+      <button class="category-card" onclick="goToMood()">Mood playlist</button>
     </div>
   </main>
 
 </div>
 <script src="categories.js"></script>
 <script src="darkmode.js"></script>
-<script>
-  useEndpoint("/api/tracks");
-</script>
-
-<P></P>
