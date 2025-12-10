@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="img/iconLogo.png">
-    <title>Mood Playlist</title>
+    <title>Happy Playlist</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 
         <header class="header-happy">
             <span class="arrow-happy" onclick="goBack()">&larr;</span>
-            <h1>Mood Playlist</h1>
+            <h1>Happy Playlist</h1>
             <div class="icons-happy">
                 <span class="icon-happy">&#x1F464;</span>
             </div>
@@ -34,7 +34,7 @@
                         <th>Time</th>
                     </tr>
                 </thead>
-                <tbody id="moodplaylist">
+                <tbody id="happyPlaylist">
                     <!-- CSV sangene bliver indsat her -->
                 </tbody>
             </table>
@@ -47,11 +47,6 @@
                 <p>...</p>
             </div>
 
-            <div class="playback-bar-happy">
-                <span class="current-time-happy">0:00</span>
-                <div class="progress-bar-happy"></div>
-                <span class="total-time-happy">0:00</span>
-            </div>
 <!--
 <footer>
     <div class="footer-album"></div>
@@ -78,18 +73,31 @@
 </footer>
 -->
 
-<footer>
+<footer class="footer">
     <div class="footer-album"></div>
     
     <div class="footer-info">
         <div id="song-title"></div>
         <div id="song-artist"></div>
     </div>
-    
-    <audio id="audio-player" class="footer-controls" id="audio-player" controls autoplay></audio>
-   
 
-    <div class="footer-empty"></div>
+    <div class="footer-center">
+        <div class="audio-controls">
+            <button id="prev">⏮</button>
+            <button id="play" onclick="togglePlay()">▶</button>
+            <button id="next">⏭</button>
+        </div>
+
+    <div class="playback-bar-happy">
+        <span class="start-time">0:00</span>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="end-time">0:10</span>
+    </div> 
+
+</div>
+
 </footer>
 
 
