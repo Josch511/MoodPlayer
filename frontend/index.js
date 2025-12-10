@@ -61,7 +61,7 @@ document.getElementById("opretkontoknap").addEventListener("click", () => {
 });
 */
 
-document.getElementById("opretkontoknap").addEventListener("click", (event) => {
+document.getElementById("userButton").addEventListener("click", (event) => {
     event.preventDefault(); // stopper form submit
 
     const username = document.getElementById("email").value;
