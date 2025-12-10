@@ -1,6 +1,5 @@
-function goToGetToKnow() {
-    window.location.href = "getToKnow.html"
-}
+
+
 
 addEventListener("DOMContentLoaded", () => {
     let partyCode = establishPartyCode();
@@ -61,3 +60,16 @@ document.getElementById("opretkontoknap").addEventListener("click", () => {
 
 });
 */
+
+document.getElementById("opretkontoknap").addEventListener("click", (event) => {
+    event.preventDefault(); // stopper form submit
+
+    const username = document.getElementById("email").value;
+    if (!username) {
+        alert("Indtast et brugernavn!");
+        return;
+    }
+
+    localStorage.setItem("username", username);
+    window.location.href = "categories.html";
+});

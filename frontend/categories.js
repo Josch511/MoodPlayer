@@ -100,3 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ændringer kommer senere når vi har dataase osv
+
+
+const username = localStorage.getItem("username");
+
+if (username) {
+    document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!" + " Vælg en kategori du gerne vil høre";
+}
