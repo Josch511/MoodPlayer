@@ -1245,4 +1245,132 @@ body.dark-mode .category-card {
 .music-icon-happy {
     background-color: #A020F0 !important;
 }
+
+/*footer*/
+/* === FULL FOOTER DARK MODE === */
+/* 🌙 Dark Mode Toggle Button */
+.dark-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #8A2BE2;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    transition: 0.2s;
+}
+
+.dark-toggle:hover {
+    background: #7a1fcf;
+}
+
+/* 🌑 DARK MODE GLOBAL */
+body.dark-mode {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode select {
+    background: #222;
+    color: #fff;
+    border-color: #555;
+}
+
+/* SONG ROWS & TABLES */
+body.dark-mode .song-row,
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    background: #000000 !important;
+    color: #e5d4ff !important;
+    border-color: #333 !important;
+}
+
+body.dark-mode .song-row:hover {
+    background: #1a0033 !important;
+}
+
+/* CATEGORY PAGE */
+body.dark-mode .category-page {
+    background: #000000 !important;
+}
+
+body.dark-mode .category-title {
+    color: #ffffff !important;
+}
+
+/* Buttons */
+body.dark-mode button,
+body.dark-mode .category-card {
+    background-color: #8A2BE2 !important;
+    color: #ffffff !important;
+    border-color: #5e00a8 !important;
+}
+
+/* ⛔ Do NOT darken logo circle */
+.logo-circle,
+.icon-circle,
+.category-logo,
+.music-icon-happy {
+    background-color: #A020F0 !important;
+}
+
+/* FOOTER Dark Mode */
+body.dark-mode .footer {
+    background: #000000 !important;
+    border-top: 1px solid #333;
+}
+
+body.dark-mode .footer-info #song-title,
+body.dark-mode .footer-info #song-artist,
+body.dark-mode .start-time,
+body.dark-mode .end-time {
+    color: #ffffff !important;
+}
+
+body.dark-mode .progress-container {
+    background: #333 !important;
+}
+
+body.dark-mode .progress-bar {
+    background: #8A2BE2 !important;
+}
+
+body.dark-mode .audio-controls button {
+    background: #8A2BE2 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .audio-controls button:hover {
+    background: #7a1fcf !important;
+}
+
+/* Make ALL text white in Dark Mode */
+body.dark-mode {
+    color: #ffffff !important;
+}
+
+body.dark-mode *,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode button,
+body.dark-mode a,
+body.dark-mode td,
+body.dark-mode th {
+    color: #ffffff !important;
+}
+
 /* darkmode ends*/
