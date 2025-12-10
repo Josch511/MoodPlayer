@@ -1,4 +1,4 @@
-// funktion til at gå tilbage til forrige side
+// function til at gå hen til de forskellige playlister
 function goToHappy() {
     window.location.href = "happyPlaylist.html"
 }
@@ -21,6 +21,7 @@ function goToMood(){
     window.location.href = "setupMood.html"
 }
 
+// denne if statement henter localstorage username, og indsætter velkommen teksten i categories siden
 const username = localStorage.getItem("username");
 
 if (username) {

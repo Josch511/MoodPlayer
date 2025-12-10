@@ -17,14 +17,15 @@
         <h1 class="title">MoodPlayer</h1>
         <p class="subtitle">Din personlige stemningsbaserede musikoplevelse</p>
 
-        <!-- Login Form -->
+        <!-- Indtastning af username og password -->
         <form class="login-form" action="categories.html" method="GET">
             <label>Brugernavn</label>
             <input id="email" type="text" placeholder="" required />
 
             <label for="password">Adgangskode</label>
             <input type="password" id="password" placeholder="" required />
-
+            
+        <!-- Indtastning af fødselsdag -->
             <label>Indtast din fødselsdag</label>
             <div class="birthday-wrapper">
                 <select id="day" required>
@@ -36,7 +37,7 @@
                     </script>
                 </select>
 
-                <!-- Month -->
+                <!-- Måneder -->
                 <select id="month" required>
                     <option value="" disabled selected>Måned</option>
                     <option>Januar</option>
@@ -53,7 +54,7 @@
                     <option>December</option>
                 </select>
 
-                <!-- Year -->
+                <!-- År -->
                 <select id="year" required>
                     <option value="" disabled selected>År</option>
                     <script>
@@ -65,7 +66,7 @@
                 </select>
             </div>
 
-            <!-- Terms and Conditions -->
+            <!-- Vilkår og betingelser tjekboks -->
             <div class="terms-wrapper">
                 <input type="checkbox" id="terms" required />
                 <label for="terms">
@@ -74,7 +75,7 @@
                 </label>
             </div>
 
-            <!-- Create Account Button -->
+            <!-- Opret konto knap -->
             <button id="userButton" type="button" class="opret-btn opret-form">Opret konto</button>
         </form>
     </div>
