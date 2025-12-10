@@ -14,9 +14,11 @@ function goToParty(){
 function goToWorkout(){
     window.location.href = "workoutPlaylist.html"
 }
+
 function goToChill(){
     window.location.href = "chillPlaylist.html"
 }
+
 function goToMood(){
     window.location.href = "setupMood.html"
 }
@@ -25,5 +27,6 @@ function goToMood(){
 const username = localStorage.getItem("username");
 
 if (username) {
+    
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!" + " Vælg en kategori du gerne vil høre";
 }
