@@ -48,7 +48,8 @@ await db.query(`
         artist      TEXT,
         album       TEXT,
         title       TEXT,
-        duration    TEXT
+        duration    TEXT,
+        albumcover  TEXT
     )
 `);
 
@@ -69,7 +70,8 @@ await db.query(`
         artist      TEXT,
         album       TEXT,
         title       TEXT,
-        duration    TEXT
+        duration    TEXT,
+        albumcover  TEXT
     )
 `);
 
@@ -79,7 +81,8 @@ await db.query(`
         artist      TEXT,
         album       TEXT,
         title       TEXT,
-        duration    TEXT
+        duration    TEXT,
+        albumcover  TEXT
     )
 `);
 
@@ -89,7 +92,8 @@ await db.query(`
         artist      TEXT,
         album       TEXT,
         title       TEXT,
-        duration    TEXT
+        duration    TEXT,
+        albumcover  TEXT
     )
 `);
 

@@ -8,10 +8,10 @@ function goToSad(){
 }
 
 function goToParty(){
-    window.location.href = "workoutPlaylist.html"
+    window.location.href = "partyPlaylist.html"
 }
 
-function goToWorkoutPlaylist(){
+function goToWorkout(){
     window.location.href = "workoutPlaylist.html"
 }
 function goToChill(){

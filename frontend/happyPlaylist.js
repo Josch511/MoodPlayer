@@ -3,7 +3,7 @@ let currentIndex = 0;
 let seconds = 0;
 const SongLength = 10;
 let timerInterval = null;
-let isPlaying = false; // ⭐️ MÅTTE tilføjes
+let isPlaying = false;
 
 // DOM
 const titleEl = document.getElementById("song-title");
@@ -19,7 +19,7 @@ function goBack() {
     window.location.href = "categories.html";
 }
 
-// 🔥 Play / Pause toggle
+// Play / Pause toggle
 function togglePlay() {
     if (isPlaying) {
         // Pause

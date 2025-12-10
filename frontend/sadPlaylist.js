@@ -10,7 +10,7 @@ const titleEl = document.getElementById("song-title");
 const albumEl = document.getElementById("song-artist");
 const currentTimeEl = document.querySelector(".start-time");
 const totalTimeEl = document.querySelector(".end-time");
-const tbody = document.getElementById("partyPlaylist");
+const tbody = document.getElementById("sadPlaylist");
 const progressBar = document.querySelector(".progress-bar");
 const playBtn = document.getElementById("play");
 
@@ -37,7 +37,7 @@ function togglePlay() {
 // Hent playlist fra API
 async function loadPartyPlaylist() {
     try {
-        const res = await fetch("/api/partyPlaylist");
+        const res = await fetch("/api/sadPlaylist");
         playlist = await res.json();
         
         console.log("API DATA:", playlist);

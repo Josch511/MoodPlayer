@@ -1,26 +1,26 @@
-id,artist,album,title,duration
-1,LMFAO,Sorry for Party Rocking,Party Rock Anthem,4:23
-2,Black Eyed Peas,The E.N.D.,I Gotta Feeling,4:49
-3,Pitbull,Planet Pit,Give Me Everything,4:12
-4,Dua Lipa,Future Nostalgia,Don't Start Now,3:03
-5,Shakira,Oral Fixation Vol. 2,Hips Don't Lie,3:38
-6,Katy Perry,Teenage Dream,California Gurls,3:54
-7,Bruno Mars,Unorthodox Jukebox,Uptown Funk,4:30
-8,Camila Cabello,Camila,Havana,3:36
-9,David Guetta,Nothing But The Beat,Titanium,4:05
-10,Major Lazer,Peace Is The Mission,Lean On,2:56
-11,Jennifer Lopez,J.Lo,On The Floor,3:50
-12,Rihanna,Loud,Only Girl (In The World),3:56
-13,Lizzo,Cuz I Love You,Juice,3:15
-14,Cardi B,Invasion of Privacy,I Like It,4:13
-15,Calvin Harris,Motion,Feel So Close,3:39
-16,Avicii,True,Levels,3:18
-17,Chris Brown,Fortune,Yeah 3x,4:10
-18,Taylor Swift,1989,Shake It Off,3:39
-19,Sean Paul,The Trinity,Temperature,3:36
-20,Maroon 5,Overexposed,Moves Like Jagger,3:21
-21,Doja Cat,Planet Her,Kiss Me More,3:28
-22,Lady Gaga,The Fame,Just Dance,4:02
-23,Nicki Minaj,Pink Friday,Starships,3:30
-24,Black Eyed Peas,Monkey Business,Let's Get It Started,3:37
-25,Jason Derulo,Futuresounds,Want to Want Me,3:27
+id,artist,album,title,duration,albumCover
+1,LMFAO,Sorry for Party Rocking,Party Rock Anthem,4:23,img/cd.jpg
+2,Black Eyed Peas,The E.N.D.,I Gotta Feeling,4:49,img/cd.jpg
+3,Pitbull,Planet Pit,Give Me Everything,4:12,img/cd.jpg
+4,Dua Lipa,Future Nostalgia,Don't Start Now,3:03,img/cd.jpg
+5,Shakira,Oral Fixation Vol. 2,Hips Don't Lie,3:38,img/cd.jpg
+6,Katy Perry,Teenage Dream,California Gurls,3:54,img/cd.jpg
+7,Bruno Mars,Unorthodox Jukebox,Uptown Funk,4:30,img/cd.jpg
+8,Camila Cabello,Camila,Havana,3:36,img/cd.jpg
+9,David Guetta,Nothing But The Beat,Titanium,4:05,img/cd.jpg
+10,Major Lazer,Peace Is The Mission,Lean On,2:56,img/cd.jpg
+11,Jennifer Lopez,J.Lo,On The Floor,3:50,img/cd.jpg
+12,Rihanna,Loud,Only Girl (In The World),3:56,img/cd.jpg
+13,Lizzo,Cuz I Love You,Juice,3:15,img/cd.jpg
+14,Cardi B,Invasion of Privacy,I Like It,4:13,img/cd.jpg
+15,Calvin Harris,Motion,Feel So Close,3:39,img/cd.jpg
+16,Avicii,True,Levels,3:18,img/cd.jpg
+17,Chris Brown,Fortune,Yeah 3x,4:10,img/cd.jpg
+18,Taylor Swift,1989,Shake It Off,3:39,img/cd.jpg
+19,Sean Paul,The Trinity,Temperature,3:36,img/cd.jpg
+20,Maroon 5,Overexposed,Moves Like Jagger,3:21,img/cd.jpg
+21,Doja Cat,Planet Her,Kiss Me More,3:28,img/cd.jpg
+22,Lady Gaga,The Fame,Just Dance,4:02,img/cd.jpg
+23,Nicki Minaj,Pink Friday,Starships,3:30,img/cd.jpg
+24,Black Eyed Peas,Monkey Business,Let's Get It Started,3:37,img/cd.jpg
+25,Jason Derulo,Futuresounds,Want to Want Me,3:27,img/cd.jpg

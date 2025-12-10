@@ -15,33 +15,55 @@ server.use(express.static('frontend'));
 server.use(express.json());
 server.use(onEachRequest);
 
-// API ROUTE TIL HAPPY PLAYLIST 
-server.get("/api/happyPlaylist", (req, res) => {
-    // tomt array til rækkerne fra csv filen 
-    const results = [];
-    // stien til csv filen 
-    const filePath = path.join(import.meta.dirname, '..', 'db', 'happyPlaylist.csv');
-    // et objekt der læser vores fil en linje af gangen i stedet for at indlæse hele filen på en gang
-    fs.createReadStream(filePath)
-        // den der gør at det kan konverteres fra csv til json 
-        .pipe(csv())
-        // hver gang den har læst en ny linje i csv filen, bliver denne linje skubbet ud i DOM
-        .on("data", (row) => results.push(row))
-        // der er ikke flere sange på listen og den logger i console.log hvor mange sange der er på listen
-        .on("end", () => {
-            console.log("Loaded", results.length, "songs");
-            res.json(results);
-        })
-        // hvis der kommer en fejl, meddeler den at vi ik ku få fat i csv filen så vi ved det er der fejlen er 
-        .on("error", (err) => {
-            console.error("CSV error:", err);
-            res.status(500).json({ error: "Failed to read CSV file" });
-        });
+// API ROUTE TIL HAPPY PLAYLIST
+server.get("/api/happyPlaylist", async (req, res) => {
+    try {
+        const result = await db.query("SELECT * FROM happyPlaylist ORDER BY id");
+        res.json(result.rows);
+    } catch (err) {
+        console.error("DB ERROR:", err);
+        res.status(500).json({ error: "Database error" });
+    }
 });
 
+
+// API ROUTE TIL CHILL PLAYLIST
+server.get("/api/chillPlaylist", async (req, res) => {
+    try {
+        const result = await db.query("SELECT * FROM chillPlaylist ORDER BY id");
+        res.json(result.rows);
+    } catch (err) {
+        console.error("DB ERROR:", err);
+        res.status(500).json({ error: "Database error" });
+    }
+});
+
+// API ROUTE TIL PARTY PLAYLIST
 server.get("/api/partyPlaylist", async (req, res) => {
     try {
         const result = await db.query("SELECT * FROM partyPlaylist ORDER BY id");
+        res.json(result.rows);
+    } catch (err) {
+        console.error("DB ERROR:", err);
+        res.status(500).json({ error: "Database error" });
+    }
+});
+
+// API ROUTE TIL SAD PLAYLIST
+server.get("/api/sadPlaylist", async (req, res) => {
+    try {
+        const result = await db.query("SELECT * FROM sadPlaylist ORDER BY id");
+        res.json(result.rows);
+    } catch (err) {
+        console.error("DB ERROR:", err);
+        res.status(500).json({ error: "Database error" });
+    }
+});
+
+// API ROUTE TIL WORKOUT PLAYLIST
+server.get("/api/workoutPlaylist", async (req, res) => {
+    try {
+        const result = await db.query("SELECT * FROM workoutPlaylist ORDER BY id");
         res.json(result.rows);
     } catch (err) {
         console.error("DB ERROR:", err);

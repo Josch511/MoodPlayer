@@ -1,26 +1,26 @@
-id,artist,album,title,duration
-1,Eminem,Recovery,'Till I Collapse,4:58
-2,Kanye West,My Beautiful Dark Twisted Fantasy,Power,4:52
-3,Survivor,Eye of the Tiger,Eye of the Tiger,4:05
-4,The Prodigy,The Fat of the Land,Firestarter,4:40
-5,DMX,It's Dark and Hell Is Hot,Ruff Ryders' Anthem,3:34
-6,Linkin Park,Meteora,Faint,2:42
-7,Dua Lipa,Future Nostalgia,Levitating,3:23
-8,David Guetta ft. Sia,Nothing but the Beat,Titanium,4:05
-9,Calvin Harris,Motion,Blame,3:32
-10,Imagine Dragons,Night Visions,Radioactive,3:07
-11,Skrillex,Bangarang,Bangarang,3:35
-12,The Weeknd,After Hours,Blinding Lights,3:20
-13,Avicii,True,Wake Me Up,4:09
-14,Macklemore & Ryan Lewis,The Heist,Can't Hold Us,4:18
-15,Zedd,Clarity,Clarity,4:31
-16,Drake,Scorpion,Nonstop,3:58
-17,Swedish House Mafia,Until Now,Don't You Worry Child,3:32
-18,Fort Minor,The Rising Tied,Remember the Name,3:50
-19,Major Lazer,Peace Is the Mission,Lean On,2:56
-20,Metallica,Metallica (The Black Album),Enter Sandman,5:32
-21,Beyoncé,Lemonade,Formation,3:26
-22,Kendrick Lamar,DAMN.,HUMBLE.,2:57
-23,Robin Schulz,Prayer,Sun Goes Down,2:54
-24,Pitbull,Global Warming,Don't Stop the Party,3:26
-25,Queen,News of the World,We Will Rock You,2:03
+id,artist,album,title,duration,albumCover
+1,Eminem,Recovery,'Till I Collapse,4:58,img/cd.jpg
+2,Kanye West,My Beautiful Dark Twisted Fantasy,Power,4:52,img/cd.jpg
+3,Survivor,Eye of the Tiger,Eye of the Tiger,4:05,img/cd.jpg
+4,The Prodigy,The Fat of the Land,Firestarter,4:40,img/cd.jpg
+5,DMX,It's Dark and Hell Is Hot,Ruff Ryders' Anthem,3:34,img/cd.jpg
+6,Linkin Park,Meteora,Faint,2:42,img/cd.jpg
+7,Dua Lipa,Future Nostalgia,Levitating,3:23,img/cd.jpg
+8,David Guetta ft. Sia,Nothing but the Beat,Titanium,4:05,img/cd.jpg
+9,Calvin Harris,Motion,Blame,3:32,img/cd.jpg
+10,Imagine Dragons,Night Visions,Radioactive,3:07,img/cd.jpg
+11,Skrillex,Bangarang,Bangarang,3:35,img/cd.jpg
+12,The Weeknd,After Hours,Blinding Lights,3:20,img/cd.jpg
+13,Avicii,True,Wake Me Up,4:09,img/cd.jpg
+14,Macklemore & Ryan Lewis,The Heist,Can't Hold Us,4:18,img/cd.jpg
+15,Zedd,Clarity,Clarity,4:31,img/cd.jpg
+16,Drake,Scorpion,Nonstop,3:58,img/cd.jpg
+17,Swedish House Mafia,Until Now,Don't You Worry Child,3:32,img/cd.jpg
+18,Fort Minor,The Rising Tied,Remember the Name,3:50,img/cd.jpg
+19,Major Lazer,Peace Is the Mission,Lean On,2:56,img/cd.jpg
+20,Metallica,Metallica (The Black Album),Enter Sandman,5:32,img/cd.jpg
+21,Beyoncé,Lemonade,Formation,3:26,img/cd.jpg
+22,Kendrick Lamar,DAMN.,HUMBLE.,2:57,img/cd.jpg
+23,Robin Schulz,Prayer,Sun Goes Down,2:54,img/cd.jpg
+24,Pitbull,Global Warming,Don't Stop the Party,3:26,img/cd.jpg
+25,Queen,News of the World,We Will Rock You,2:03,img/cd.jpg

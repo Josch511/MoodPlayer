@@ -15,7 +15,7 @@
 
         <header class="header-happy">
             <span class="arrow-happy" onclick="goBack()">&larr;</span>
-            <h1>Happy Playlist</h1>
+            <h1>Party Playlist</h1>
             <div class="icons-happy">
                 <span class="icon-happy">&#x1F464;</span>
             </div>
@@ -26,14 +26,14 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>title</th>
-                        <th>artist</th>
-                        <th>album</th>
-                        <th>time</th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Time</th>
                     </tr>
                 </thead>
                 <tbody id="partyPlaylist">
-                    <!-- HER SKAL SANGENE KOMME -->
+                    <!-- CSV sangene bliver indsat her -->
                 </tbody>
             </table>
         </div>
@@ -45,19 +45,13 @@
                 <p>...</p>
             </div>
 
-            <div class="playback-bar-happy">
-                <span class="current-time-happy">0:00</span>
-                <div class="progress-bar-happy"></div>
-                <span class="total-time-happy">0:00</span>
-            </div>
+<!--
+<footer>
+    <div class="footer-album"></div>
 
-<footer class="category-footer">
-    <div class="footer-left">
-        <div class="footer-album"></div>
-        <div class="footer-text">
-            <div class="footer-title" id="song-title">Sunny Day</div>
-            <div id="song-artist">Good Vibes</div>
-        </div>
+    <div class="footer-info">
+        <div id="song-title">Sunny Day</div>
+        <div id="song-artist">Good Vibes</div>
     </div>
 
     <div class="footer-controls">
@@ -67,10 +61,52 @@
         <button id="btn-next">⏭</button>
         <button id="btn-like">🫶</button>
     </div>
-
+    
+    <audio class="footer-controls" controls autoplay muted>
+        <source src="horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
     <div class="footer-empty"></div>
 </footer>
+-->
 
-    <script src="partyplaylist.js"></script>
+<footer class="footer">
+    <div class="footer-album"></div>
+    
+    <div class="footer-info">
+        <div id="song-title"></div>
+        <div id="song-artist"></div>
+    </div>
+
+    <div class="footer-center">
+        <div class="audio-controls">
+            <button id="prev">⏮</button>
+            <button id="play" onclick="togglePlay()">▶</button>
+            <button id="next">⏭</button>
+        </div>
+
+    <div class="playback-bar-happy">
+        <span class="start-time">0:00</span>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="end-time">0:10</span>
+    </div> 
+
+</div>
+
+</footer>
+    
+<script src="partyplaylist.js"></script>
+    
 </body>
+    
 </html>
+    
+    <!-- <audio id="audio-player" class="footer-controls" id="audio-player" controls autoplay></audio> -->
+    
+    
+
+
+
