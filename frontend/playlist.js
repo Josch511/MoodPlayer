@@ -1,3 +1,4 @@
+// VARIABLER
 let playlist = [];
 let currentIndex = 0;
 let seconds = 0;
@@ -5,7 +6,7 @@ const SongLength = 10;
 let timerInterval = null;
 let isPlaying = false;
 
-// DOM
+// DOM MANIPULATION
 const titleEl = document.getElementById("song-title");
 const albumEl = document.getElementById("song-artist");
 const currentTimeEl = document.querySelector(".start-time");
@@ -13,7 +14,7 @@ const totalTimeEl = document.querySelector(".end-time");
 const progressBar = document.querySelector(".progress-bar");
 const playBtn = document.getElementById("play");
 
-// Funktion til tilbageknap
+// FUNKTION TIL TILBAGEKNAP
 function goBack() {
     window.location.href = "categories.html";
 }
@@ -198,7 +199,7 @@ async function loadChillPlaylist() {
     }
 }
 
-// Afspil valgt sang
+// AFSPIL NÆSTE SANG
 function loadSong(index) {
     currentIndex = index;
     const song = playlist[index];
@@ -212,7 +213,7 @@ function loadSong(index) {
     if (progressBar) progressBar.style.width = "0%";
 }
 
-// Dummy-timer
+// DUMMY TIMER
 function startTimer() {
     if (timerInterval) clearInterval(timerInterval);
 
@@ -240,7 +241,7 @@ function startTimer() {
         }
     }, 1000);
 }
-// Initial load
+// LOADER DE FORSKELLIGE PLAYLISTER 
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("sadPlaylist")) {
         loadSadPlaylist();
@@ -255,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// function til at gå hen til de forskellige playlister
+// KNAP FUNKTIONER TIL DE FORSKELLIGE PLAYLISTER 
 function goToHappy() {
     window.location.href = "happyPlaylist.html"
 }

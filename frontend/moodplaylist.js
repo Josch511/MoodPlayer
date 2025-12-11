@@ -118,9 +118,9 @@ function togglePlayPause() {
     if (isPlaying) startTimer();
 }
 
-// ====== Init når DOM er klar ======
+// initiate når dommen er klar 
 document.addEventListener("DOMContentLoaded", () => {
-    // hent DOM elements nu
+    // henter DOM elementer nu
     titleEl = document.getElementById("song-title");
     albumEl = document.getElementById("song-artist");
     currentTimeEl = document.querySelector(".start-time");
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar = document.querySelector(".progress-bar");
     playBtn = document.getElementById("play");
 
-    // hent data fra sessionStorage og brug global playlist
+    // henter data fra sessionStorage 
     const data = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
     playlist = Array.isArray(data) ? data : [];
     console.log("Matched songs on mood page:", playlist);
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         playBtn.addEventListener("click", togglePlayPause);
         updatePlayButton();
     } else {
-        console.warn("Play-knap (#play) ikke fundet i DOM. Tjek at knappen findes.");
+        console.log("Play-knap (#play) ikke fundet i DOM. Tjek at knappen findes.");
     }
 });
 
