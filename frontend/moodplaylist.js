@@ -149,4 +149,3 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Play-knap (#play) ikke fundet i DOM. Tjek at knappen findes.");
     }
 });
-// const playlist = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");

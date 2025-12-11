@@ -289,18 +289,6 @@ if (username) {
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!" + " Vælg en kategori du gerne vil høre";
 }
 
-// DARK MODE FUNKTION
-const toggle = document.querySelector('.dark-toggle');
-
-if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark-mode");
-}
-
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-});
-
 // FUNKTION TIL BRUGERNAVN - BLIVER HUSKET PÅ NÆSTE SIDE 
 document.getElementById("userButton").addEventListener("click", (event) => {
     event.preventDefault(); // stopper form submit
