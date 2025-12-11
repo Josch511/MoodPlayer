@@ -287,3 +287,29 @@ if (username) {
     
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!" + " Vælg en kategori du gerne vil høre";
 }
+
+
+const toggle = document.querySelector('.dark-toggle');
+
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+}
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+});
+
+// denne function har en localstorage, som gør, at username bliver husket i categories siden i "welcomeText"
+document.getElementById("userButton").addEventListener("click", (event) => {
+    event.preventDefault(); // stopper form submit
+
+    const username = document.getElementById("email").value;
+    if (!username) {
+        alert("Indtast et brugernavn!");
+        return;
+    }
+
+    localStorage.setItem("username", username);
+    window.location.href = "categories.html";
+});
