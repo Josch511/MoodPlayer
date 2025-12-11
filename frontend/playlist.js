@@ -288,7 +288,7 @@ if (username) {
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!" + " Vælg en kategori du gerne vil høre";
 }
 
-
+// Dark mode funktion
 const toggle = document.querySelector('.dark-toggle');
 
 if (localStorage.getItem("darkMode") === "true") {
