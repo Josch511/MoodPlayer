@@ -289,7 +289,7 @@ if (username) {
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!" + " Vælg en kategori du gerne vil høre";
 }
 
-// Dark mode funktion
+// DARK MODE FUNKTION
 const toggle = document.querySelector('.dark-toggle');
 
 if (localStorage.getItem("darkMode") === "true") {
@@ -301,7 +301,7 @@ toggle.addEventListener("click", () => {
     localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
 });
 
-// denne function har en localstorage, som gør, at username bliver husket i categories siden i "welcomeText"
+// FUNKTION TIL BRUGERNAVN - BLIVER HUSKET PÅ NÆSTE SIDE 
 document.getElementById("userButton").addEventListener("click", (event) => {
     event.preventDefault(); // stopper form submit
 
