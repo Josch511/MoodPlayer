@@ -54,7 +54,7 @@ function renderQuestion() {
     titleEl.textContent = question.title;
     answersEl.innerHTML = "";
     nextBtn.disabled = true;
-
+    // laver knapper for hver svarmulighed
     question.answers.forEach((answer) => {
         const btn = document.createElement("button");
         btn.classList.add("answer-btn");
@@ -101,7 +101,7 @@ nextBtn.addEventListener("click", () => {
     // efter 5. spørgsmål
     if (currentQuestionIndex >= questions.length) {
         console.log("Brugerens svar:", userAnswers);
-
+        // Alle audio features sat til 0 som default
         valence = 0;
         tempo = 0;
         loudness = 0;
@@ -167,7 +167,7 @@ nextBtn.addEventListener("click", () => {
         }
         // sørger for at værdierne ikke overstiger 1
         if (energy > 1) energy = 1;
-
+        //Debugging logs
         console.log("Valence:", valence);
         console.log("Tempo:", tempo);
         console.log("Loudness:", loudness);
@@ -192,6 +192,7 @@ nextBtn.addEventListener("click", () => {
                 instrumentalness
             })
         })
+        // Få responsen og gem i sessionStorage
         .then(res => res.json())
         .then(data => {
             console.log("Matched songs:", data);

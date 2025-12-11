@@ -26,7 +26,6 @@ server.get("/api/happyPlaylist", async (req, res) => {
     }
 });
 
-
 // API ROUTE TIL CHILL PLAYLIST
 server.get("/api/chillPlaylist", async (req, res) => {
     try {
@@ -77,8 +76,8 @@ server.post("/api/matchedPlaylist", async (req, res) => {
         const { valence, tempo, loudness, energy, acousticness, danceability, instrumentalness } = req.body;
 
         // Validering af input
-        if (valence === undefined || tempo === undefined || loudness === undefined || 
-            energy === undefined || acousticness === undefined || danceability === undefined || 
+        if (valence === undefined || tempo === undefined || loudness === undefined ||
+            energy === undefined || acousticness === undefined || danceability === undefined ||
             instrumentalness === undefined) {
             return res.status(400).json({ error: "Missing audio features" });
         }
@@ -99,7 +98,7 @@ server.post("/api/matchedPlaylist", async (req, res) => {
             LIMIT 25
         `, [valence, energy, danceability, instrumentalness, acousticness, tempo, loudness]);
 
-        console.log(`Found ${result.rows.length} matched songs for features:`, 
+        console.log(`Found ${result.rows.length} matched songs for features:`,
                     { valence, tempo, loudness, energy, acousticness, danceability, instrumentalness });
 
         res.json(result.rows);
@@ -130,7 +129,7 @@ function onServerReady() {
 }
 
 function pickNextTrackFor(partyCode) {
-    const trackIndex = Math.floor(Math.random() * tracks.length)
+    const trackIndex = Math.floor(Math.random() * tracks.length);
     currentTracks.set(partyCode, trackIndex);
     const track = tracks[trackIndex];
     play(partyCode, track.track_id, track.duration, Date.now(), () => currentTracks.delete(partyCode));

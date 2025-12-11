@@ -33,10 +33,6 @@ function togglePlay() {
     }
 }
 
-// ...existing code...
-// Entferne die globale Zeile:
-// const tbody = document.getElementById("workoutPlaylist");
-
 // WORKOUT PLAYLIST
 async function loadWorkoutPlaylist() {
     try {
@@ -244,7 +240,7 @@ function startTimer() {
         }
     }, 1000);
 }
-
+// Initial load
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("sadPlaylist")) {
         loadSadPlaylist();
