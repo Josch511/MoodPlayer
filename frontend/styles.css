@@ -708,10 +708,10 @@ th:nth-child(5), td:nth-child(5) {
 }
 
 .category-title {
-    font-size: 29px;
+    font-size: 35px;
     font-weight: 700;
     color: #2a004d;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 /* Category Grid Layout */
@@ -1614,4 +1614,12 @@ body{
     height: 150px;
     margin: 0 auto 20px auto;
     display: block;
+}
+
+.choose-a-category{
+    font-size: 20px;
+    font-weight: 700;
+    color: #a189b4;
+    margin-bottom: 25px;
+    margin-top: 10px;
 }

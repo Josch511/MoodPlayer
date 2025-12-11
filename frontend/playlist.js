@@ -286,7 +286,7 @@ const username = localStorage.getItem("username");
 
 if (username) {
     
-    document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!" + " Vælg en kategori du gerne vil høre";
+    document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!";
 }
 
 // FUNKTION TIL BRUGERNAVN - BLIVER HUSKET PÅ NÆSTE SIDE 
