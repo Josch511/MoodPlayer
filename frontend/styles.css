@@ -1421,7 +1421,7 @@ body.dark-mode img {
 
 /* White progress bar in Dark Mode */
 body.dark-mode .progress-bar {
-    background: #ffffff !important;
+    background: #8A2BE2 !important;
 }
 /* ✨ Show images normally in Dark Mode */
 body.dark-mode img,
