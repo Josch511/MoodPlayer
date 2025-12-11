@@ -1,6 +1,24 @@
-// Henter matchedsongs fra sessionstorage fra setupMood.js
-const data = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
-console.log("Matched songs on mood page:", data);
+// Variabler
+let playlist = [];
+let currentIndex = 0;
+let seconds = 0;
+const SongLength = 10;
+let timerInterval = null;
+let isPlaying = false;
+
+// DOM
+let titleEl = document.getElementById("song-title");
+let albumEl = document.getElementById("song-artist");
+let currentTimeEl = document.querySelector(".start-time");
+let totalTimeEl = document.querySelector(".end-time");
+let progressBar = document.querySelector(".progress-bar");
+let playBtn = document.getElementById("play");
+
+// Funktion til tilbageknap
+function goBack() {
+    window.location.href = "categories.html";
+}
+
 // Format duration from ms to mm:ss
 function formatDuration(ms = 0) {
     const totalSec = Math.floor(ms / 1000);
@@ -8,12 +26,17 @@ function formatDuration(ms = 0) {
     const s = totalSec % 60;
     return `${m}:${s.toString().padStart(2, "0")}`;
 }
+
+// Henter matchedsongs fra sessionstorage fra setupMood.js
+const data = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
+playlist = data;
+console.log("Matched songs on mood page:", data);
+
 // Load matched playlist into table
-async function loadMatchedPlaylist() {
+function loadMatchedPlaylistIntoTable() {
     const tbody = document.getElementById("moodplaylist");
     if (!tbody) return;
 
-    const playlist = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
     tbody.innerHTML = "";
 
     playlist.forEach((song, index) => {
@@ -25,8 +48,106 @@ async function loadMatchedPlaylist() {
             <td>${song.album_name || "-"}</td>
             <td>${formatDuration(song.duration_ms)}</td>
         `;
+
         tbody.appendChild(row);
     });
+
+    if (playlist.length > 0) {
+            loadSong(0);
+            isPlaying = true;
+            playBtn.textContent = "⏸";
+            startTimer();
+        }
 }
 
-loadMatchedPlaylist();
+// Afspil valgt sang
+function loadSong(index) {
+    if (!playlist || playlist.length === 0) return;
+    currentIndex = index % playlist.length;
+    const song = playlist[currentIndex];
+
+    titleEl.textContent = song.track_name || song.title || "-";
+    albumEl.textContent = song.artists || song.artist || "-";
+
+    seconds = 0;
+    if (currentTimeEl) currentTimeEl.textContent = "0:00";
+    if (totalTimeEl) totalTimeEl.textContent = `0:${SongLength.toString().padStart(2,"0")}`;
+    if (progressBar) progressBar.style.width = "0%";
+}
+
+// Opdater play-knap 
+function updatePlayButton() {
+    if (!playBtn) return;
+    playBtn.textContent = isPlaying ? "⏸" : "▶";
+}
+
+// Dummy-timer
+function startTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+
+    timerInterval = setInterval(() => {
+        if (!isPlaying) return;
+        if (!playlist || playlist.length === 0) return;
+
+        seconds++;
+
+        // Update current time
+        const min = Math.floor(seconds / 60);
+        const sec = seconds % 60;
+        if (currentTimeEl) currentTimeEl.textContent = `${min}:${sec.toString().padStart(2,"0")}`;
+
+        // Update progress bar
+        if (progressBar) {
+            const percent = Math.min(100, (seconds / SongLength) * 100);
+            progressBar.style.width = `${percent}%`;
+        }
+
+        // Skift sang når tiden er ovre
+        if (seconds >= SongLength) {
+            currentIndex = (currentIndex + 1) % playlist.length;
+            loadSong(currentIndex);
+        }
+    }, 1000);
+}
+
+// Toggle play/pause (kan kaldes fra knap)
+function togglePlayPause() {
+    if (!playlist || playlist.length === 0) return;
+    isPlaying = !isPlaying;
+    updatePlayButton();
+    if (isPlaying) startTimer();
+}
+
+// ====== Init når DOM er klar ======
+document.addEventListener("DOMContentLoaded", () => {
+    // hent DOM elements nu
+    titleEl = document.getElementById("song-title");
+    albumEl = document.getElementById("song-artist");
+    currentTimeEl = document.querySelector(".start-time");
+    totalTimeEl = document.querySelector(".end-time");
+    progressBar = document.querySelector(".progress-bar");
+    playBtn = document.getElementById("play");
+
+    // hent data fra sessionStorage og brug global playlist
+    const data = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
+    playlist = Array.isArray(data) ? data : [];
+    console.log("Matched songs on mood page:", playlist);
+
+    // fyld tabel
+    loadMatchedPlaylistIntoTable();
+
+    // hvis vi har mindst én sang, load første sang (men start ikke afspil automatisk medmindre du vil)
+    if (playlist.length > 0) {
+        loadSong(0);
+    }
+
+    // play-knap event
+    if (playBtn) {
+        playBtn.addEventListener("click", togglePlayPause);
+        updatePlayButton();
+    } else {
+        console.warn("Play-knap (#play) ikke fundet i DOM. Tjek at knappen findes.");
+    }
+});
+
+// const playlist = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
