@@ -112,7 +112,7 @@ function onEachRequest(request, response, next) {
 }
 
 async function onFallback(request, response) {
-    response.sendFile(path.join(import.meta.dirname, '..', 'frontend', 'index.html'));
+    response.sendFile(path.join(import.meta.dirname, '..', 'frontend', 'categories.html'));
 }
 
 function onServerReady() {
