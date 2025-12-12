@@ -281,24 +281,12 @@ function goToMood(){
     window.location.href = "setupMood.html"
 }
 
-// denne if statement henter localstorage username, og indsætter velkommen teksten i categories siden
 const username = localStorage.getItem("username");
 
 if (username) {
-    
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!";
 }
 
-// FUNKTION TIL BRUGERNAVN - BLIVER HUSKET PÅ NÆSTE SIDE 
-document.getElementById("userButton").addEventListener("click", (event) => {
-    event.preventDefault(); // stopper form submit
 
-    const username = document.getElementById("email").value;
-    if (!username) {
-        alert("Indtast et brugernavn!");
-        return;
-    }
 
-    localStorage.setItem("username", username);
-    window.location.href = "categories.html";
-});
+
