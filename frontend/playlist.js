@@ -19,6 +19,11 @@ function goBack() {
     window.location.href = "categories.html";
 }
 
+// FUNKTION TIL TILBAGEKNAP
+function goBackIndex() {
+    window.location.href = "index.html";
+}
+
 // PLAY / PAUSE FUNKTION
 function togglePlay() {
     if (isPlaying) {

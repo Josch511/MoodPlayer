@@ -1,3 +1,8 @@
+// FUNKTION TIL TILBAGEKNAP
+function goBack() {
+    window.location.href = "index.html";
+}
+
 // OPRET 
 document.getElementById("userButton").addEventListener("click", (event) => {
     event.preventDefault();

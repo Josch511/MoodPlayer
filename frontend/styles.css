@@ -1624,3 +1624,34 @@ body{
     margin-bottom: 25px;
     margin-top: 10px;
 }
+
+.header-categories {
+    display: flex;
+    flex-direction: column;   /* Læg elementerne ovenpå hinanden */
+    align-items: center;      /* Centrer vandret */
+    padding: 10px 0;
+    font-weight: 600;
+    
+}
+
+/* Top-rækken kun til tilbage-pilen */
+.top-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Pil til venstre */
+    padding-left: 10px;
+}
+
+/* Centrer logo */
+.logoIndex img {
+    width: 140px;           /* valgfrit */
+    display: block;
+    margin: 0px auto;
+}
+
+/* Tekster under logo */
+.category-title,
+.choose-a-category {
+    text-align: center;
+    margin: 0px 0;
+}
