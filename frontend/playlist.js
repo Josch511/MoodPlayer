@@ -221,16 +221,13 @@ function loadSong(index) {
     if (progressBar) progressBar.style.width = "0%";
 
     // End-time
-    const durationSec = song.duration ? parseInt(song.duration) : SongLength;
+    const durationSec = Math.floor((song.duration_ms || SongLength * 1000) / 1000);
+    song._durationSec = durationSec;
+
     if (totalTimeEl) {
         totalTimeEl.textContent = `${Math.floor(durationSec / 60)}:${(durationSec % 60).toString().padStart(2,"0")}`;
     }
-
-    song._durationSec = durationSec; // gem til timer/progress-bar
 }
-
-
-
 
 // DUMMY TIMER
 function startTimer() {
@@ -238,7 +235,7 @@ function startTimer() {
 
     timerInterval = setInterval(() => {
         if (!isPlaying) return;
-        if (playlist.length === 0) return;
+        if (!playlist || playlist.length === 0) return;
 
         seconds++;
 
@@ -248,18 +245,19 @@ function startTimer() {
         if (currentTimeEl) currentTimeEl.textContent = `${min}:${sec.toString().padStart(2,"0")}`;
 
         // Update progress bar
-        if (progressBar) {
-            const percent = (seconds / SongLength) * 100;
-            progressBar.style.width = `${percent}%`;
-        }
+        const duration = playlist[currentIndex]._durationSec || SongLength; // brug faktisk sanglængde
+        const percent = Math.min(100, (seconds / duration) * 100);
+        if (progressBar) progressBar.style.width = `${percent}%`;
 
         // Skift sang når tiden er ovre
-        if (seconds >= SongLength) {
+        if (seconds >= duration) {
             currentIndex = (currentIndex + 1) % playlist.length;
             loadSong(currentIndex);
         }
+
     }, 1000);
 }
+
 // LOADER DE FORSKELLIGE PLAYLISTER 
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("sadPlaylist")) {
@@ -276,36 +274,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // KNAP FUNKTIONER TIL DE FORSKELLIGE PLAYLISTER 
-function goToHappy() {
-    window.location.href = "happyPlaylist.html"
-}
-
-function goToSad(){
-    window.location.href = "sadPlaylist.html"
-}
-
-function goToParty(){
-    window.location.href = "partyPlaylist.html"
-}
-
-function goToWorkout(){
-    window.location.href = "workoutPlaylist.html"
-}
-
-function goToChill(){
-    window.location.href = "chillPlaylist.html"
-}
-
-function goToMood(){
-    window.location.href = "setupMood.html"
-}
+function goToHappy() { window.location.href = "happyPlaylist.html" }
+function goToSad(){ window.location.href = "sadPlaylist.html" }
+function goToParty(){ window.location.href = "partyPlaylist.html" }
+function goToWorkout(){ window.location.href = "workoutPlaylist.html" }
+function goToChill(){ window.location.href = "chillPlaylist.html" }
+function goToMood(){ window.location.href = "setupMood.html" }
 
 const username = localStorage.getItem("username");
-
 if (username) {
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!";
 }
-
-
-
-

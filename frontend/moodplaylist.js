@@ -68,26 +68,23 @@ function loadSong(index) {
     currentIndex = index;
     const song = playlist[currentIndex];
 
-    // Footer
-    if (titleEl) titleEl.textContent = song.title || "-";
-    if (albumEl) albumEl.textContent = song.artist || "-";
+    if (titleEl) titleEl.textContent = song.track_name || "-";
+    if (albumEl) albumEl.textContent = song.artists || "-";
 
     // Reset timer
     seconds = 0;
     if (currentTimeEl) currentTimeEl.textContent = "0:00";
     if (progressBar) progressBar.style.width = "0%";
 
-    // Parse duration string
-    const durationSec = parseDurationString(song.duration);
+    // Brug duration_ms i stedet for parseDurationString
+    const durationSec = Math.floor((song.duration_ms || SongLength * 1000) / 1000);
+    song._durationSec = durationSec;
 
-    // Sæt end-time korrekt
     if (totalTimeEl) {
         totalTimeEl.textContent = `${Math.floor(durationSec / 60)}:${(durationSec % 60).toString().padStart(2,"0")}`;
     }
-
-    // Gem til timer/progress bar
-    song._durationSec = durationSec;
 }
+
 
 
 // Opdater play-knap 
@@ -112,18 +109,19 @@ function startTimer() {
         if (currentTimeEl) currentTimeEl.textContent = `${min}:${sec.toString().padStart(2,"0")}`;
 
         // Update progress bar
-        if (progressBar) {
-            const percent = Math.min(100, (seconds / SongLength) * 100);
-            progressBar.style.width = `${percent}%`;
-        }
+        const duration = playlist[currentIndex]._durationSec || SongLength; // brug faktisk sanglængde
+        const percent = Math.min(100, (seconds / duration) * 100);
+        if (progressBar) progressBar.style.width = `${percent}%`;
 
         // Skift sang når tiden er ovre
-        if (seconds >= SongLength) {
+        if (seconds >= duration) {
             currentIndex = (currentIndex + 1) % playlist.length;
             loadSong(currentIndex);
         }
+
     }, 1000);
 }
+
 
 // Toggle play/pause (kan kaldes fra knap)
 function togglePlayPause() {
