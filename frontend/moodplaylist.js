@@ -64,17 +64,31 @@ function loadMatchedPlaylistIntoTable() {
 // Afspil valgt sang
 function loadSong(index) {
     if (!playlist || playlist.length === 0) return;
-    currentIndex = index % playlist.length;
+
+    currentIndex = index;
     const song = playlist[currentIndex];
 
-    titleEl.textContent = song.track_name || song.title || "-";
-    albumEl.textContent = song.artists || song.artist || "-";
+    // Footer
+    if (titleEl) titleEl.textContent = song.title || "-";
+    if (albumEl) albumEl.textContent = song.artist || "-";
 
+    // Reset timer
     seconds = 0;
     if (currentTimeEl) currentTimeEl.textContent = "0:00";
-    if (totalTimeEl) totalTimeEl.textContent = `0:${SongLength.toString().padStart(2,"0")}`;
     if (progressBar) progressBar.style.width = "0%";
+
+    // Parse duration string
+    const durationSec = parseDurationString(song.duration);
+
+    // Sæt end-time korrekt
+    if (totalTimeEl) {
+        totalTimeEl.textContent = `${Math.floor(durationSec / 60)}:${(durationSec % 60).toString().padStart(2,"0")}`;
+    }
+
+    // Gem til timer/progress bar
+    song._durationSec = durationSec;
 }
+
 
 // Opdater play-knap 
 function updatePlayButton() {
@@ -150,3 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Play-knap (#play) ikke fundet i DOM. Tjek at knappen findes.");
     }
 });
+
+
+

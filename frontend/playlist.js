@@ -206,17 +206,31 @@ async function loadChillPlaylist() {
 
 // AFSPIL NÆSTE SANG
 function loadSong(index) {
+    if (!playlist || playlist.length === 0) return;
+
     currentIndex = index;
-    const song = playlist[index];
+    const song = playlist[currentIndex];
 
-    titleEl.textContent = song.title;
-    albumEl.textContent = song.artist;
+    // Footer
+    if (titleEl) titleEl.textContent = song.title || "-";
+    if (albumEl) albumEl.textContent = song.artist || "-";
 
+    // Reset timer
     seconds = 0;
     if (currentTimeEl) currentTimeEl.textContent = "0:00";
-    if (totalTimeEl) totalTimeEl.textContent = `0:${SongLength.toString().padStart(2,"0")}`;
     if (progressBar) progressBar.style.width = "0%";
+
+    // End-time
+    const durationSec = song.duration ? parseInt(song.duration) : SongLength;
+    if (totalTimeEl) {
+        totalTimeEl.textContent = `${Math.floor(durationSec / 60)}:${(durationSec % 60).toString().padStart(2,"0")}`;
+    }
+
+    song._durationSec = durationSec; // gem til timer/progress-bar
 }
+
+
+
 
 // DUMMY TIMER
 function startTimer() {
