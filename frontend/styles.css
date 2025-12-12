@@ -1,6 +1,6 @@
 /* CSS til log-in siden */
 body{
-    margin: 12;
+    margin: 5px;
     padding: 10;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #f5edff, #ffffff);
@@ -23,7 +23,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 20px auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .note {
