@@ -1622,7 +1622,7 @@ body{
     font-weight: 700;
     color: #a189b4;
     margin-bottom: 25px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .header-categories {
@@ -1644,7 +1644,7 @@ body{
 
 /* Centrer logo */
 .logoIndex img {
-    width: 140px;           /* valgfrit */
+    width: auto;           /* valgfrit */
     display: block;
     margin: 0px auto;
 }
@@ -1653,5 +1653,5 @@ body{
 .category-title,
 .choose-a-category {
     text-align: center;
-    margin: 0px 0;
+    margin: 10px 0;
 }
