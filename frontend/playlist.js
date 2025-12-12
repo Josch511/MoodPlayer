@@ -19,7 +19,7 @@ function goBack() {
     window.location.href = "categories.html";
 }
 
-// Play / Pause toggle
+// PLAY / PAUSE FUNKTION
 function togglePlay() {
     if (isPlaying) {
         // Pause

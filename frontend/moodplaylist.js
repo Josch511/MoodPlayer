@@ -52,6 +52,7 @@ function loadMatchedPlaylistIntoTable() {
         tbody.appendChild(row);
     });
 
+    // gør så den starter afspilning så snart man trykker ind på playlisten
     if (playlist.length > 0) {
             loadSong(0);
             isPlaying = true;
