@@ -1601,3 +1601,42 @@ body{
     margin: 0 auto 20px auto;
     display: block;
 }
+
+.choose-a-category{
+    font-size: 20px;
+    font-weight: 700;
+    color: #a189b4;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+.header-categories {
+    display: flex;
+    flex-direction: column;   /* Læg elementerne ovenpå hinanden */
+    align-items: center;      /* Centrer vandret */
+    padding: 10px 0;
+    font-weight: 600;
+    
+}
+
+/* Top-rækken kun til tilbage-pilen */
+.top-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Pil til venstre */
+    padding-left: 10px;
+}
+
+/* Centrer logo */
+.logoIndex img {
+    width: auto;           /* valgfrit */
+    display: block;
+    margin: 0px auto;
+}
+
+/* Tekster under logo */
+.category-title,
+.choose-a-category {
+    text-align: center;
+    margin: 10px 0;
+}
