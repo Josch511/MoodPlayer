@@ -527,7 +527,7 @@ tbody tr:hover {
 
 /* Sørger for, at tabellen bruger de definerede bredder */
 .playlist-area-happy table {
-    table-layout: fixed; /* VIGTIGT: Hvis den mangler i din kode, indsæt den */
+    table-layout: fixed; /* VIGTIGT */
 }
 
 /* Kolonne 1: # (nummer) */
@@ -652,10 +652,6 @@ th:nth-child(5), td:nth-child(5) {
     box-shadow: 0 5px 10px rgba(138, 43, 226, 0.4); /* Tilføj skygge */
 }
 
-/* Hjertet: Sikrer hvid farve på ikon */
-.heart-happy {
-    color: white; 
-}
 
 /* Hover effekt for de fyldte knapper */
 .button-happy:hover, .play-happy:hover {
