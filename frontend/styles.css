@@ -1,6 +1,6 @@
 /* CSS til log-in siden */
 body{
-    margin: 5px;
+    margin: 12;
     padding: 10;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #f5edff, #ffffff);
@@ -23,8 +23,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 0 auto 20px auto;
 }
 
 .note {
@@ -407,7 +406,7 @@ h1 {
     margin: 0 auto 0px auto;
     display: block;
 }
-
+/* CSS til alle playlister */
 /* Definer farver */
 :root {
     --purple-main: #8A2BE2; /* Primær lilla (til knapper/ikoner) */
@@ -418,7 +417,7 @@ h1 {
 
 /* Får siden til at fylde hele skærmen med en blød lilla baggrund */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Segoe UI'; 
     background: linear-gradient(135deg, var(--light-purple) 0%, #ffffff 100%); 
     margin: 0;
     padding: 0;
@@ -621,7 +620,6 @@ th:nth-child(5), td:nth-child(5) {
     margin: 10px 0; 
 }
 
-/* --- NU ER ALLE KNAPPER FYLDT LILLA, SOM PÅ DIT BILLEDE --- */
 /* Knapper (<<, >>, Shuffle, Hjerte) */
 .button-happy {
     font-size: 18px; 
@@ -709,10 +707,10 @@ th:nth-child(5), td:nth-child(5) {
 }
 
 .category-title {
-    font-size: 35px;
+    font-size: 29px;
     font-weight: 700;
     color: #2a004d;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 /* Category Grid Layout */
@@ -795,15 +793,6 @@ th:nth-child(5), td:nth-child(5) {
     justify-self: end;
     opacity: 0.8;
 }
-
-
-
-
-
-
-
-
-
 
 
 #song-title {
@@ -1576,7 +1565,7 @@ body{
 }
 
 #back-btn {
-    background-color: #a020f0;
+    background-color: #e0e0e0;
     color: #333;
 }
 
@@ -1611,47 +1600,8 @@ body{
 }
 
 .logoIndex img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 20px auto;
     display: block;
-}
-
-.choose-a-category{
-    font-size: 20px;
-    font-weight: 700;
-    color: #a189b4;
-    margin-bottom: 25px;
-    margin-top: 15px;
-}
-
-.header-categories {
-    display: flex;
-    flex-direction: column;   /* Læg elementerne ovenpå hinanden */
-    align-items: center;      /* Centrer vandret */
-    padding: 10px 0;
-    font-weight: 600;
-    
-}
-
-/* Top-rækken kun til tilbage-pilen */
-.top-row {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start; /* Pil til venstre */
-    padding-left: 10px;
-}
-
-/* Centrer logo */
-.logoIndex img {
-    width: auto;           /* valgfrit */
-    display: block;
-    margin: 0px auto;
-}
-
-/* Tekster under logo */
-.category-title,
-.choose-a-category {
-    text-align: center;
-    margin: 10px 0;
 }
