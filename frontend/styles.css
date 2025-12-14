@@ -447,20 +447,6 @@ body {
     padding: 20px 0 10px 0; 
 }
 
-.music-icon-happy {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px; 
-    height: 60px;
-    background-color: var(--purple-main);
-    border-radius: 50%;
-    font-size: 30px; 
-    color: white; 
-    font-weight: bold;
-    padding-right: 5px; 
-}
-
 /* Header-området */
 .header-happy {
     display: flex;
