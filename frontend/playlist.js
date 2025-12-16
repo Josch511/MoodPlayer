@@ -1,4 +1,4 @@
-// VARIABLER
+// Variabler
 let playlist = [];
 let currentIndex = 0;
 let seconds = 0;
@@ -6,7 +6,7 @@ const SongLength = 10;
 let timerInterval = null;
 let isPlaying = false;
 
-// DOM MANIPULATION
+// DOM Manipulation 
 const titleEl = document.getElementById("song-title");
 const albumEl = document.getElementById("song-artist");
 const currentTimeEl = document.querySelector(".start-time");
@@ -14,12 +14,12 @@ const totalTimeEl = document.querySelector(".end-time");
 const progressBar = document.querySelector(".progress-bar");
 const playBtn = document.getElementById("play");
 
-// FUNKTION TIL TILBAGEKNAP
+// Funktion til tilbageknap
 function goBack() {
     window.location.href = "categories.html";
 }
 
-// FUNKTION TIL TILBAGEKNAP
+// funktion til tilbage til index knap 
 function goBackIndex() {
     window.location.href = "index.html";
 }
@@ -47,6 +47,8 @@ async function loadWorkoutPlaylist() {
 
         const tbody = document.getElementById("workoutPlaylist");
         if (!tbody) return;
+
+        // vi starter med et tomt html 
         tbody.innerHTML = "";
 
         playlist.forEach((song, index) => {
@@ -58,15 +60,19 @@ async function loadWorkoutPlaylist() {
                 <td>${song.album}</td>
                 <td>${song.duration}</td>
             `;
+
+            // indsætter child i parents 
             tbody.appendChild(row);
         });
 
+        // starter timeren og skifter play til pause 
         if (playlist.length > 0) {
             loadSong(0);
             isPlaying = true;
             playBtn.textContent = "⏸";
             startTimer();
         }
+    // logger at fejlen ligger i load af lplaylist hvis det er her fejlen er 
     } catch (error) {
         console.error("Fejl ved hentning af playlist:", error);
     }
@@ -205,10 +211,9 @@ async function loadChillPlaylist() {
 }
 
 // AFSPIL NÆSTE SANG
-function loadSong(index) {
+function loadSong(currentIndex) {
     if (!playlist || playlist.length === 0) return;
 
-    currentIndex = index;
     const song = playlist[currentIndex];
 
     // Footer
@@ -222,7 +227,6 @@ function loadSong(index) {
 
     // End-time
     const durationSec = Math.floor((song.duration_ms || SongLength * 1000) / 1000);
-    song._durationSec = durationSec;
 
     if (totalTimeEl) {
         totalTimeEl.textContent = `${Math.floor(durationSec / 60)}:${(durationSec % 60).toString().padStart(2,"0")}`;
@@ -245,7 +249,7 @@ function startTimer() {
         if (currentTimeEl) currentTimeEl.textContent = `${min}:${sec.toString().padStart(2,"0")}`;
 
         // Update progress bar
-        const duration = playlist[currentIndex]._durationSec || SongLength; // brug faktisk sanglængde
+        const duration = playlist[currentIndex].durationSec || SongLength; 
         const percent = Math.min(100, (seconds / duration) * 100);
         if (progressBar) progressBar.style.width = `${percent}%`;
 
