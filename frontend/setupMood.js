@@ -40,7 +40,7 @@ let currentQuestionIndex = 0;
 let userAnswers = [];
 console.log(userAnswers);
 
-// henter elementerne fra HTML 
+// Dom manipulation henter elementerne fra HTML 
 const titleEl = document.getElementById("question-title");
 const answersEl = document.getElementById("answers");
 const progressBar = document.getElementById("progress-bar");
@@ -54,6 +54,7 @@ function renderQuestion() {
     titleEl.textContent = question.title;
     answersEl.innerHTML = "";
     nextBtn.disabled = true;
+
     // laver knapper for hver svarmulighed
     question.answers.forEach((answer) => {
         const btn = document.createElement("button");
@@ -93,12 +94,12 @@ function updateBackButton() {
 
 // Fortsæt knappens funktion 
 nextBtn.addEventListener("click", () => {
-
+    // fejlforbyggelse - hvis ik der er nogle svar, retuner intet 
     if (!userAnswers[currentQuestionIndex]) return;
 
     currentQuestionIndex++;
 
-    // efter 5. spørgsmål
+    // efter sidste spørgsmål
     if (currentQuestionIndex >= questions.length) {
         console.log("Brugerens svar:", userAnswers);
         // Alle audio features sat til 0 som default
@@ -165,9 +166,11 @@ nextBtn.addEventListener("click", () => {
             energy += 0.8;
             danceability += 0.9;
         }
+
         // sørger for at værdierne ikke overstiger 1
         if (energy > 1) energy = 1;
-        //Debugging logs
+
+        // Debugging logs
         console.log("Valence:", valence);
         console.log("Tempo:", tempo);
         console.log("Loudness:", loudness);
@@ -192,6 +195,7 @@ nextBtn.addEventListener("click", () => {
                 instrumentalness
             })
         })
+
         // Få responsen og gem i sessionStorage
         .then(res => res.json())
         .then(data => {
@@ -204,7 +208,6 @@ nextBtn.addEventListener("click", () => {
         });
         return;
     }
-
     renderQuestion();
 });
 
@@ -216,5 +219,5 @@ backBtn.addEventListener("click", () => {
     renderQuestion();
 });
 
-// Render first question on page load
+// loader renderQuestion på siden 
 renderQuestion();
