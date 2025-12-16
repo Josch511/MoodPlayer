@@ -2,33 +2,39 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="img/iconLogo.png">
-    <title>Vælg kategori</title>
-    <button class="dark-toggle">🌙</button>
+    <title>Chill Playlist</title>
     <link rel="stylesheet" href="styles.css">
-  </head>
+</head>
+
   <body>
-    
+
+    <button class="dark-toggle">🌙</button>
+
+    <!-- standart css div -->
     <div class="category-page">
 
-      
   <header class="header-categories">
 
+    <!-- vi bruger her span i stedet for button da vi gerne vil undgå knappen -->
+    <!-- &larr; = left arrow -->
     <div class="top-row">
         <span class="arrow-happy" onclick="goBackIndex()">&larr;</span>
     </div>
 
+    <!-- Logo -->
     <div class="logoIndex">
         <img src="img/logoTilMoodPlayer.png"/>
     </div>
 
+    <!-- titel / velkomst tekst -->
     <p class="category-title" id="welcomeText"></p>
     <p class="choose-a-category">Vælg en kategori du gerne vil høre</p>
 
-</header>
+  </header>
 
-
+  <!-- vores categori cards -->
   <main class="category-main">
     <div class="category-grid">
       <button class="category-card" onclick="goToSad()">Sad</button>
@@ -41,6 +47,7 @@
   </main>
 
 </div>
+
 <script src="playlist.js"></script>
 <script src="darkmode.js"></script>
 
