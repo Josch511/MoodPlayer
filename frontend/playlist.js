@@ -262,7 +262,7 @@ function startTimer() {
     }, 1000);
 }
 
-// LOADER DE FORSKELLIGE PLAYLISTER 
+// loader de forskellige playlister 
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("sadPlaylist")) {
         loadSadPlaylist();
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// KNAP FUNKTIONER TIL DE FORSKELLIGE PLAYLISTER 
+// knapper ind til de forskellige playlister  
 function goToHappy() { window.location.href = "happyPlaylist.html" }
 function goToSad(){ window.location.href = "sadPlaylist.html" }
 function goToParty(){ window.location.href = "partyPlaylist.html" }
