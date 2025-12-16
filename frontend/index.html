@@ -18,17 +18,17 @@
         <p class="subtitle">Din personlige stemningsbaserede musikoplevelse</p>
 
         <!-- Indtastning af username og password -->
-        <form class="login-form" action="categories.html" method="GET" required>
+        <form class="login-form" action="categories.html" method="GET">
             <label>Brugernavn</label>
-            <input id="username" type="text" placeholder="" required />
+            <input id="username" type="text" placeholder=""/>
 
             <label for="password">Adgangskode</label>
-            <input type="password" id="password" placeholder="" required />
+            <input type="password" id="password" placeholder=""/>
             
         <!-- Indtastning af fødselsdag -->
             <label>Indtast din fødselsdag</label>
             <div class="birthday-wrapper">
-                <select id="day" required>
+                <select id="day">
                     <option value="" disabled selected>Dag</option>
                     <script>
                         for (let d = 1; d <= 31; d++) {
@@ -38,7 +38,7 @@
                 </select>
 
                 <!-- Måneder -->
-                <select id="month" required>
+                <select id="month">
                     <option value="" disabled selected>Måned</option>
                     <option>Januar</option>
                     <option>Februar</option>
@@ -55,7 +55,7 @@
                 </select>
 
                 <!-- År -->
-                <select id="year" required>
+                <select id="year">
                     <option value="" disabled selected>År</option>
                     <script>
                         const currentYear = new Date().getFullYear();
@@ -68,7 +68,7 @@
 
             <!-- Vilkår og betingelser tjekboks -->
             <div class="terms-wrapper">
-                <input type="checkbox" id="terms" required />
+                <input type="checkbox" id="terms"/>
                 <label for="terms">
                     <span class="required">*</span>
                     Ved at fortsætte accepterer du vores vilkår og betingelser
