@@ -1,12 +1,12 @@
 
-// VARIABLER
+// Variabler
 let playlist = [];
 let currentIndex = 0;
 let seconds = 0;
 let timerInterval = null;
 let isPlaying = false;
 
-// DOM
+// dom manipulation 
 let titleEl;
 let albumEl;
 let currentTimeEl;
@@ -14,13 +14,13 @@ let totalTimeEl;
 let progressBar;
 let playBtn;
 
-// NAVIGATION
+// Tilbage knap 
 function goBack() {
     window.location.href = "categories.html";
 }
 
 
-// HELPERS
+// formatere fra ms til m:s
 function formatDuration(ms = 0) {
     const totalSec = Math.floor(ms / 1000);
     const min = Math.floor(totalSec / 60);
@@ -29,7 +29,7 @@ function formatDuration(ms = 0) {
 }
 
 
-// LOAD PLAYLIST TABLE
+// loader playlisten
 function loadMatchedPlaylistIntoTable() {
     const tbody = document.getElementById("moodplaylist");
     if (!tbody) return;
@@ -50,7 +50,7 @@ function loadMatchedPlaylistIntoTable() {
 }
 
 
-// LOAD SONG
+// loader sangene 
 function loadSong(index) {
     if (!playlist.length) return;
 
@@ -80,7 +80,7 @@ function loadSong(index) {
 }
 
 
-// TIMER
+// Timer
 function startTimer(durationSec) {
     clearInterval(timerInterval);
 
@@ -105,7 +105,7 @@ function startTimer(durationSec) {
     }, 1000);
 }
 
-// PLAY / PAUSE
+// Play / Pause 
 function updatePlayButton() {
     playBtn.textContent = isPlaying ? "⏸" : "▶";
 }
@@ -124,9 +124,9 @@ function togglePlayPause() {
     }
 }
 
-// INIT
+// Init
 document.addEventListener("DOMContentLoaded", () => {
-    // DOM refs
+    // DOM manipulation
     titleEl = document.getElementById("song-title");
     albumEl = document.getElementById("song-artist");
     currentTimeEl = document.querySelector(".start-time");
@@ -142,9 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loadMatchedPlaylistIntoTable();
 
     if (playlist.length > 0) {
-    isPlaying = true;      // 🔹 START AUTOMATISK
-    updatePlayButton();   // 🔹 Vis pause-ikon
-    loadSong(0);          // 🔹 Starter timeren
+    isPlaying = true;      // Start sang automatisk
+    updatePlayButton();   // Vis pause-ikon
+    loadSong(0);          // Starter timeren
 }
 
 
