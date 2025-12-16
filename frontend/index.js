@@ -5,6 +5,7 @@ function goBack() {
 
 // OPRET 
 document.getElementById("userButton").addEventListener("click", (event) => {
+    // så vi kan bruge submit i stedet button
     event.preventDefault();
     
     const username = document.getElementById("username");
@@ -16,8 +17,8 @@ document.getElementById("userButton").addEventListener("click", (event) => {
 
     // Validering
     if (
-        username.value.trim() === "" ||
-        password.value.trim() === "" ||
+        username.value === "" ||
+        password.value === "" ||
         day.value === "" ||
         month.value === "" ||
         year.value === "" ||
@@ -30,7 +31,7 @@ document.getElementById("userButton").addEventListener("click", (event) => {
     // Gem brugernavn
     localStorage.setItem("username", username.value);
 
-    // Send videre til categories
+    // Send videre til categories ved tryk på oret konto
     window.location.href = "categories.html";
 });
 
