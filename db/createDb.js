@@ -16,6 +16,7 @@ console.log('All tables dropped.');
 
 console.log('Recreating tables...');
 
+// double precision = meget præcise tal 
 await db.query(`
     CREATE TABLE mood_tracks (
         number           INTEGER,
@@ -108,14 +109,20 @@ await upload(db, 'db/tracks.csv', `
     ) FROM STDIN WITH CSV HEADER
 `);
 
+// indexet er så opslag på track_id går hurtigere 
 await db.query('create index track_id_index on mood_tracks (track_id)')
 
+// delete går igennem HVER sang for at finde dublikatpr og sletter alt der har samme track ID 
 await db.query('delete from mood_tracks m where number > (select min(number) from mood_tracks where track_id = m.track_id)')
 
+// fjerner index igen så vi har en tom index tabel 
 await db.query('drop index track_id_index')
 
+// laver ny unique index tabel 
 await db.query('create unique index track_id_index on mood_tracks (track_id)')
 
+
+// UPLOADER ALLE VORES PLAYLISTER 
 await upload(db, 'db/partyPlaylist.csv', `
     COPY partyPlaylist (
         id, artist, album, title, duration, albumCover

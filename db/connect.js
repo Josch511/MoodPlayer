@@ -1,6 +1,9 @@
+// import from postGreSQL
 import pg from 'pg';
+// login informationer
 import dotenv from 'dotenv';
 
+// importere connect funktionen og henter vores PG data
 export async function connect() {
     dotenv.config();
     const pool = new pg.Pool({
