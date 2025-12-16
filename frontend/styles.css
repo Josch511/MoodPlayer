@@ -464,13 +464,12 @@ body {
     color: var(--text-dark);
 }
 
-.arrow-happy,
-.icons-happy .icon-happy {
+.arrow-happy {
     font-size: 20px;
     color: var(--purple-main);
     cursor: pointer;
 }
-.icons-happy .icon-happy {
+.icons-happy {
     font-size: 24px;
 }
 
