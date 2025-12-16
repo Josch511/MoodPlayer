@@ -51,15 +51,12 @@ function loadMatchedPlaylistIntoTable() {
 
 
 // loader sangene 
-function loadSong(index) {
+function loadSong(currentIndexindex) {
     if (!playlist.length) return;
 
     // Stop gammel timer
     clearInterval(timerInterval);
     timerInterval = null;
-
-    currentIndex = index;
-    seconds = 0;
 
     const song = playlist[currentIndex];
     const durationSec = Math.floor((song.duration_ms || 0) / 1000);
@@ -76,7 +73,9 @@ function loadSong(index) {
     progressBar.style.width = "0%";
 
     // Start hvis play
-    if (isPlaying) startTimer(durationSec);
+    if (isPlaying) { 
+        startTimer(durationSec);
+    }
 }
 
 
@@ -102,6 +101,7 @@ function startTimer(durationSec) {
             clearInterval(timerInterval);
             loadSong((currentIndex + 1) % playlist.length);
         }
+    // 1000 ms = 1 sekund
     }, 1000);
 }
 
@@ -110,21 +110,18 @@ function updatePlayButton() {
     playBtn.textContent = isPlaying ? "⏸" : "▶";
 }
 
+
 function togglePlayPause() {
+    // Hvis der ingen sange er, så gør funktionen ingenting
     if (!playlist.length) return;
 
+    // Hvis isPlaying var false → bliver true play
+    // Hvis isPlaying var true → bliver false pause
     isPlaying = !isPlaying;
     updatePlayButton();
-
-    if (isPlaying && !timerInterval) {
-        const durationSec = Math.floor(
-            (playlist[currentIndex].duration_ms || 0) / 1000
-        );
-        startTimer(durationSec);
-    }
 }
 
-// Init
+// Venter på at alt content er loaded
 document.addEventListener("DOMContentLoaded", () => {
     // DOM manipulation
     titleEl = document.getElementById("song-title");
@@ -138,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
     playlist = Array.isArray(data) ? data : [];
 
-    // UI
+    // kalder vores funktion 
     loadMatchedPlaylistIntoTable();
 
     if (playlist.length > 0) {
@@ -147,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSong(0);          // Starter timeren
 }
 
-
+    // kalder funktion til playbtn 
     playBtn.addEventListener("click", togglePlayPause);
     updatePlayButton();
 });
