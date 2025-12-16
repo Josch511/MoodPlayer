@@ -1625,3 +1625,7 @@ body{
     text-align: center;
     margin: 10px 0;
 }
+
+.h1p {
+    text-align: left;
+}
