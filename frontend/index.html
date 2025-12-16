@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 </head>
 <body>
+
     <button class="dark-toggle">🌙</button>
+
+    <!-- Logo -->
     <div class="container">
         <div class="logoIndex">
         <img src="img/logoTilMoodPlayer.png"/>
         </div>
 
+        <!-- titel -->
         <h1 class="title">MoodPlayer</h1>
         <p class="subtitle">Din personlige stemningsbaserede musikoplevelse</p>
 
@@ -29,6 +33,7 @@
             <div class="birthday-wrapper">
                 <select id="day">
                     <option value="" disabled selected>Dag</option>
+                    <!-- den viser dag 1 - 31 -->
                     <script>
                         for (let d = 1; d <= 31; d++) {
                             document.write(`<option value="${d}">${d}</option>`);
@@ -56,6 +61,7 @@
                 <!-- År -->
                 <select id="year">
                     <option value="" disabled selected>År</option>
+                    <!-- gør så du kan vælge år fra 1900 - nuværende år -->
                     <script>
                         const currentYear = new Date().getFullYear();
                         for (let y = currentYear; y >= 1900; y--) {
