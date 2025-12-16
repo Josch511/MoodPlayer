@@ -197,7 +197,7 @@ nextBtn.addEventListener("click", () => {
         .then(data => {
             console.log("Matched songs:", data);
             sessionStorage.setItem("matchedSongs", JSON.stringify(data));
-            window.location.href = "/moodplaylist.html";
+            window.location.href = "/moodPlaylist.html";
         })
         .catch(err => {
             console.error("Error fetching matched playlist:", err);
