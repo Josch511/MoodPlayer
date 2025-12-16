@@ -285,6 +285,7 @@ function goToWorkout(){ window.location.href = "workoutPlaylist.html" }
 function goToChill(){ window.location.href = "chillPlaylist.html" }
 function goToMood(){ window.location.href = "setupMood.html" }
 
+// det der gør at vi kan gemme vores brugernavn til næste side 
 const username = localStorage.getItem("username");
 if (username) {
     document.getElementById("welcomeText").textContent = "Velkommen, " + username + "!";
