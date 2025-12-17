@@ -53,7 +53,7 @@ function loadMatchedPlaylistIntoTable() {
 
 
 // loader sangene 
-function loadSong(currentIndexindex) {
+function loadSong(currentIndex) {
     if (!playlist.length) return;
 
     // Stop gammel timer
