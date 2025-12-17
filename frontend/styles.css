@@ -641,7 +641,7 @@ th:nth-child(5), td:nth-child(5) {
 .button-happy:hover, .play-happy:hover {
     opacity: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Slut css for alle playlister */
+/* CSS slut for alle playlister */
 }
 
 .opret-btn {
