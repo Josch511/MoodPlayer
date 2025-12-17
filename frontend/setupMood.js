@@ -119,7 +119,6 @@ nextBtn.addEventListener("click", () => {
         }
         if (userAnswers[0] === "Forelsket") {
             valence += 0.6;
-            acousticness += 0.5;
         }
         if (userAnswers[0] === "Heartbroken") {
             valence += 0.2;
@@ -128,25 +127,25 @@ nextBtn.addEventListener("click", () => {
         // ENERGI
         if (userAnswers[1] === "Lav") {
             tempo += 50;
-            energy += 0.4;
+            energy += 0.3;
         }
         if (userAnswers[1] === "Medium") {
             tempo += 100;
-            energy += 0.6;
+            energy += 0.5;
         }
         if (userAnswers[1] === "Høj") {
-            tempo += 130;
-            energy += 0.9;
+            tempo += 120;
+            energy += 0.7;
         }
 
         // STEMNING
         if (userAnswers[2] === "Mørk") {
             instrumentalness += 0.5;
-            loudness += -5;
+            loudness += -3;
         }
         if (userAnswers[2] === "Lys") {
             instrumentalness += 0.2;
-            loudness += -8;
+            loudness += -6;
         }
         if (userAnswers[2] === "Blandet") {
             instrumentalness += 0.35;
@@ -154,16 +153,16 @@ nextBtn.addEventListener("click", () => {
 
         // DANS
         if (userAnswers[3] === "Overhovedet ikke") {
-            energy += 0.2;
-            danceability += 0.4;
+            energy += 0.1;
+            danceability += 0.3;
         }
         if (userAnswers[3] === "Sådan nogenlunde") {
-            energy += 0.5;
-            danceability += 0.6;
+            energy += 0.4;
+            danceability += 0.5;
         }
         if (userAnswers[3] === "Ja meget") {
-            energy += 0.8;
-            danceability += 0.9;
+            energy += 0.7;
+            danceability += 0.75;
         }
         // sørger for at værdierne ikke overstiger 1
         if (energy > 1) energy = 1;

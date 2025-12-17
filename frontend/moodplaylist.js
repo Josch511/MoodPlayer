@@ -14,6 +14,8 @@ let totalTimeEl;
 let progressBar;
 let playBtn;
 
+
+
 // Tilbage knap 
 function goBack() {
     window.location.href = "categories.html";
@@ -134,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Playlist fra sessionStorage
     const data = JSON.parse(sessionStorage.getItem("matchedSongs") || "[]");
     playlist = Array.isArray(data) ? data : [];
+    console.log(data);
 
     // kalder vores funktion 
     loadMatchedPlaylistIntoTable();
