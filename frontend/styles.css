@@ -357,13 +357,12 @@ h1 {
     transform: scale(1.2);
 }
 
-/* ===== MAIN SECTION ===== */
+/* main header for musik */
 .music-main {
     flex: 1;
     padding: 40px;
 }
 
-/* Heading exactly like sketch */
 .music-heading {
     font-size: 38px;
     font-weight: 700;
@@ -371,7 +370,7 @@ h1 {
     color: #3c0565;
 }
 
-/* ===== CATEGORY GRID ===== */
+/* Kategori opbygning */
 .music-grid {
     display: grid;
     grid-template-columns: repeat(2, 180px);
@@ -409,10 +408,10 @@ h1 {
 /* CSS til alle playlister */
 /* Definer farver */
 :root {
-    --purple-main: #8A2BE2; /* Primær lilla (til knapper/ikoner) */
-    --light-purple: #f8f0ff; /* Meget lys lilla til blød baggrund */
-    --text-dark: #333; /* Mørk tekst for læsbarhed */
-    --light-line: #ddd; /* Meget let linje til opdeling */
+    --purple-main: #8A2BE2; 
+    --light-purple: #f8f0ff;
+    --text-dark: #333;
+    --light-line: #ddd;
 }
 
 /* Får siden til at fylde hele skærmen med en blød lilla baggrund */
@@ -441,7 +440,7 @@ body {
     color: var(--text-dark);
 }
 
-/* --- LOGO I TOPPEN --- */
+/* Logo */
 .logo-happy {
     text-align: center;
     padding: 20px 0 10px 0; 
@@ -512,40 +511,40 @@ tbody tr:hover {
 
 /* Sørger for, at tabellen bruger de definerede bredder */
 .playlist-area-happy table {
-    table-layout: fixed; /* VIGTIGT */
+    table-layout: fixed;
 }
 
 /* Kolonne 1: # (nummer) */
 th:nth-child(1), td:nth-child(1) { 
     width: 5%; 
-    text-align: center; /* Centrer nummeret */
+    text-align: center; 
 }
 
 /* Kolonne 2: Title (Helt til venstre) */
 th:nth-child(2) { 
-    width: 45%; /* Lidt mindre, så album får plads */
-    text-align: left; /* Header tekst til venstre */
+    width: 45%; 
+    text-align: left;
 }
 
 /* Kolonne 3: artist (Centreret) */
 th:nth-child(3), td:nth-child(3) { 
     width: 75%; 
-    text-align: center; /* Centrerer både header og data */
+    text-align: center;
 }
 
 /* Kolonne 4: Album (Centreret) */
 th:nth-child(4), td:nth-child(4) { 
     width: 200%; 
-    text-align: center; /* Centrerer både header og data */
+    text-align: center; 
 }
 
 /* Kolonne 5: Time (Helt til højre) */
 th:nth-child(5), td:nth-child(5) { 
-    width: 5%; /* Lidt mere plads */
-    text-align: right; /* Header tekst til højre */
+    width: 5%; 
+    text-align: right; 
 }
 
-/* --- PLAYER-KONTROLOMRÅDET (Kompakt) --- */
+/* Player kontrolområdet */
 .player-controls-happy {
     padding: 10px 20px; 
     border-top: 1px solid var(--light-line); 
@@ -615,9 +614,9 @@ th:nth-child(5), td:nth-child(5) {
     background-color: var(--purple-main); 
     color: white; 
     
-    /* GØR KNAPPEN RUND */
-    padding: 8px 10px; /* Juster for at gøre den rund */
-    border-radius: 50%; /* Gør den cirkulær */
+    /* Gør knappen rund */
+    padding: 8px 10px; 
+    border-radius: 50%;
     
     opacity: 0.9;
     transition: opacity 0.2s, box-shadow 0.2s;
@@ -625,16 +624,16 @@ th:nth-child(5), td:nth-child(5) {
 
 /* Play/Pause knappen */
 .play-happy {
-    font-size: 24px; /* Gør den større */
+    font-size: 24px;
     border: none; 
     background-color: var(--purple-main);
     color: white; 
     
-    /* GØR KNAPPEN RUND OG STØRRE */
+   /* Gør knappen rund og større */
     border-radius: 50%; 
-    padding: 10px 14px 10px 16px; /* Juster for at centrere trekanten */
+    padding: 10px 14px 10px 16px;
     margin: 0 15px; 
-    box-shadow: 0 5px 10px rgba(138, 43, 226, 0.4); /* Tilføj skygge */
+    box-shadow: 0 5px 10px rgba(138, 43, 226, 0.4);
 }
 
 
@@ -642,13 +641,14 @@ th:nth-child(5), td:nth-child(5) {
 .button-happy:hover, .play-happy:hover {
     opacity: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Slut css for alle playlister */
 }
 
 .opret-btn {
-    margin: 20px auto; /* auto → centrér */
-    padding: 16px 32px; /* mere højde + længere */
-    width: 80%; /* gør den længere (ændr hvis du vil) */
-    max-width: 300px; /* stop den fra at blive kæmpe */
+    margin: 20px auto;
+    padding: 16px 32px; 
+    width: 80%; 
+    max-width: 300px; 
     border: none;
     border-radius: 8px;
     background-color: #a020f0;
@@ -711,7 +711,7 @@ th:nth-child(5), td:nth-child(5) {
     text-align: center;
 }
 
-/* Category Card Buttons */
+/* Category card knapper */
 .category-card {
     height: 180px;
     background: #a445f7;
@@ -731,8 +731,6 @@ th:nth-child(5), td:nth-child(5) {
     background: #b35eff;
     transform: translateY(-6px);
 }
-
-
 
 /* categories.css done here */
 
@@ -790,11 +788,10 @@ th:nth-child(5), td:nth-child(5) {
 
 /* Den tomme div — lader den være */
 
-
 .playback-bar-happy {
     display: flex;
     align-items: center;
-    gap: 10px; /* afstand mellem tid og bar */
+    gap: 10px; 
     width: 70%;
     font-family: sans-serif;
     font-size: 14px;
@@ -808,15 +805,15 @@ th:nth-child(5), td:nth-child(5) {
 }
 
 .progress-container {
-    flex: 1; /* fylder alt plads mellem tidene */
+    flex: 1;
     height: 8px;
     background-color: #eee;
     border-radius: 4px;
-    justify-content: center; /* sikrer at bar ikke "stikker ud" */
+    justify-content: center; 
 }
 
 .progress-bar-happy {
-    width: 0%; /* denne opdateres med JS */
+    width: 0%; 
     height: 100%;
     background-color: purple;
     border-radius: 4px;
@@ -826,13 +823,13 @@ th:nth-child(5), td:nth-child(5) {
 .audio-player {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* start på venstre, slut på højre */
-  width: 300px; /* eller efter behov */
+  justify-content: space-between; 
+  width: 300px; 
 }
 
 .controls {
   display: flex;
-  gap: 10px; /* afstand mellem knapper */
+  gap: 10px; 
 }
 
 .progress-container {
@@ -840,8 +837,8 @@ th:nth-child(5), td:nth-child(5) {
   height: 8px;
   background: #eee;
   border-radius: 4px;
-  margin-top: 5px; /* adskillelse fra knapper */
-  overflow: hidden; /* sikrer at baren ikke går udenfor */
+  margin-top: 5px;
+  overflow: hidden; 
 }
 
 .progress-bar {
@@ -852,7 +849,7 @@ th:nth-child(5), td:nth-child(5) {
   display: block;
 }
 
-/* FOOTER LAYOUT */
+/* Footer layout */
 .footer {
     
     bottom: 0;
@@ -887,7 +884,7 @@ th:nth-child(5), td:nth-child(5) {
     align-items: center;
 }
 
-/* PLAY KNAPPER */
+/* Play knapper */
 .audio-controls {
     display: flex;
     gap: 15px;
@@ -954,7 +951,7 @@ th:nth-child(5), td:nth-child(5) {
     color: #666;
 }
 
-/* ===== RESULTS PAGE STYLING ===== */
+/* result styling*/
 .results-page {
     background: linear-gradient(135deg, var(--light-purple) 0%, #ffffff 100%);
     margin: 0;
@@ -1134,15 +1131,6 @@ th:nth-child(5), td:nth-child(5) {
     background-color: #7a1fb8;
 }
 
-
-
-
-
-
-/* =========================
-   DARK MODE CSS
-   ========================= */
-
 /* Dark mode toggle button */
 .dark-toggle {
     position: fixed;
@@ -1315,9 +1303,6 @@ body.dark-mode .footer-album {
     border: none !important;
     box-shadow: none !important;
 }
-
-/* End dark mode */
-
 
 /* darkmode ends*/
 
@@ -1504,8 +1489,8 @@ body{
 
 .header-categories {
     display: flex;
-    flex-direction: column;   /* Læg elementerne ovenpå hinanden */
-    align-items: center;      /* Centrer vandret */
+    flex-direction: column;  
+    align-items: center;    
     padding: 10px 0;
     font-weight: 600;
     
@@ -1515,13 +1500,13 @@ body{
 .top-row {
     width: 100%;
     display: flex;
-    justify-content: flex-start; /* Pil til venstre */
+    justify-content: flex-start; 
     padding-left: 10px;
 }
 
 /* Centrer logo */
 .logoIndex img {
-    width: auto;           /* valgfrit */
+    width: auto;           
     display: block;
     margin: 0px auto;
 }
